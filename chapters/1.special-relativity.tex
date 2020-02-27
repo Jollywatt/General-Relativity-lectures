@@ -35,12 +35,12 @@ Postulates of Special Relativity:
 	and this value is the same in all inertial frames.
 \end{enumerate}
 	
-For photons,
+For photons, \exercise
 \begin{align}
 	c = \underset{\text{frame $K$}}{\qty|\dv{\uvec x}{t}|} = \underset{\text{frame $K'$}}{\qty|\dv{\uvec x'}{t}|}
 	\label{eqn:photon-speed}
 .\end{align}
-Rewriting \eqref{eqn:photon-speed} we see that, for photons,
+Rewriting \eqref{eqn:photon-speed} we see that, for photons, \exercise
 \begin{align}
 	\underset{\text{frame $K$}}{(\dd x)^2 + (\dd y)^2 + (\dd z)^2 - c^2(\dd t)^2}
 	= \underset{\text{frame $K'$}}{(\dd x')^2 + (\dd y')^2 + (\dd z')^2 - c^2(\dd t')^2} = 0
@@ -313,7 +313,7 @@ This implies that, in an inertial frame, the particles velocity $\uvec v$ is sub
 
 Consider a freely moving particle whose (timelike) worldline unit tangent vector is $\ts V$.
 There always exists a Lorentz transformation which sends a timelike unit vector to $V^\mu \mapsto V^{\bar\mu} = (1, 0, 0, 0)$ \exercise.
-The \textbf{proper time interval} $\dd\tau$between two neighbouring events along the particle's worldline is defined as the interval of time measured in the particle's instantaneous rest frame.
+The \textbf{proper time interval} $\dd\tau$ between two neighbouring events along the particle's worldline is defined as the interval of time measured in the particle's instantaneous rest frame.
 \begin{align}
 	c^2\dd\tau^2 = -\eta_{\mu\nu}\dd x^\mu\dd x^\nu
 	\label{eqn:def-proper-time}
@@ -336,5 +336,15 @@ Integrate $\dd\tau$ via \eqref{eqn:def-proper-time} along the path to get the to
 	The proper time elapsed depends on the path taken between the two events.
 \end{note}
 
-Particle worldlines can be characterised by an action principle: variation of \eqref{eqn:total-proper-time} with respect to the trajectories, $\delta x^\mu(\lambda)$, yields the equations of motion $\pdv[2]{x^\mu}{\lambda} = 0$ (with $\delta x^\mu = 0$ fixed at both ends) \exercise.
-In fact, the extremised trajectory minimises the proper time: freely falling particles take the path of maximum proper time.
+Particle worldlines can be characterised by an action principle: variation of \eqref{eqn:total-proper-time} with respect to the trajectories, $\delta x^\mu(\lambda)$, yields the equations of motion $\pdv[2]{x^\mu}{\lambda} = 0$ (holding $\delta x^\mu = 0$ fixed at both ends) \exercise.
+In fact, the extremised trajectory minimises the proper time---\emph{freely falling particles take the path of maximum proper time.}
+
+By \eqref{eqn:def-proper-time},
+\begin{math}
+	c^2\dd\tau^2 = -\dd t^2 + \sum_i(\dd x^i)^2 = \dd t^2\qty(-1 + \uvec v\cdot\uvec v)
+\end{math}
+where $v^i \equiv \dv{x^i}{t}$ so
+\begin{align}
+	\dd\tau = \sqrt{1 - \frac{v^2}{c^2}}\dd t \equiv \gamma\dd t
+\end{align}
+is the proper time of a frame moving at velocity $\uvec v$ relative to a frame with coordinates $(ct, x^i)$.

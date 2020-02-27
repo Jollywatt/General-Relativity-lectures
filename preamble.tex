@@ -76,10 +76,11 @@
 
 %% TYPOGRAPHY
 
-% Allow exact control of font sizes
-\usepackage{anyfontsize}
-\usepackage{hyperref} % for digital versions
+\usepackage{anyfontsize} % allow exact control of font sizes
 \usepackage{kantlipsum}
+
+% for digital versions: hyperlinks and correct PDF double-spread layout with title page
+\usepackage[pdfpagelayout=TwoPageRight]{hyperref}
 
 \usepackage[font=small]{caption}
 \usepackage[inline]{enumitem} % horizontal lists with starred environment
@@ -103,7 +104,9 @@
 }{\end{mdframed}}
 
 % Exercise label with checkbox
-\newcommand{\exercise}{{({Ex:}~\text{\fboxsep=-.15pt\fbox{\rule{0pt}{2ex}\rule{2ex}{0pt}}}\,)}}
+\usepackage{marginnote}
+\newcommand{\checkbox}{\fboxsep=-.15pt\fbox{\rule{0pt}{1.6ex}\rule{1.6ex}{0pt}}}
+\newcommand{\exercise}{\emph{(exercise)}\marginnote{\checkbox}}
 
 % Notes to editor(s)
 \newcommand{\alert}[1]{\ifdraft\textcolor{red}{\textbf{\underline{#1}}}\else\fi}

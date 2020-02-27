@@ -1,0 +1,20 @@
+\begin{tikzpicture}[sketch]
+
+\begin{axis}[
+    Frame,
+    name=K,
+]
+\end{axis}
+
+\begin{axis}[
+    Barred Frame,
+    name=KBAR,
+    at={($(K) + (15:3cm)$)},
+]
+\end{axis}
+
+\draw[->,dashed] (K.center) --node[above] {$\ts a$} (KBAR.center);
+
+\node[anchor=north west] at (.3, -.4) {\small \em (homogeneity of spacetime)};
+
+\end{tikzpicture}

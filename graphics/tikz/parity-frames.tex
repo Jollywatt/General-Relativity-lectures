@@ -1,0 +1,25 @@
+\begin{tikzpicture}[sketch]
+
+
+\begin{axis}[
+    Frame,
+    name=K,
+    view={30}{20},
+]
+\end{axis}
+
+\begin{axis}[
+    Barred Frame,
+    name=KBAR,
+    at={($(K) + (0:3.5cm)$)},
+    view={180+30}{20},
+    xlabel style={anchor=east},
+    ylabel style={anchor=north east},
+    zlabel style={anchor=north},
+    z post scale=-1
+]
+\end{axis}
+
+\draw[->] (K) --node[above] {$P$} (KBAR);
+
+\end{tikzpicture}

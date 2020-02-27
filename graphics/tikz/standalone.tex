@@ -1,0 +1,36 @@
+\documentclass{standalone}
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps}
+
+
+\pgfplotsset{
+    compat=1.8, % required for correct 3d label placement
+    Frame/.style={
+        axis lines=center,
+        ticks=none,
+        width=4cm,height=4cm,
+        xmin=-1,xmax=1,
+        ymin=-1,ymax=1,
+        zmin=-1,zmax=1,
+        view={30}{20},
+        xlabel style={anchor=west},
+        ylabel style={anchor=south west},
+        zlabel style={anchor=south},
+        xlabel={$x$},ylabel={$y$},zlabel={$z$},
+        anchor=center,
+    },
+    Barred Frame/.style={
+        Frame,
+        xlabel={$\bar x$},ylabel={$\bar y$},zlabel={$\bar z$},
+    }
+}
+
+ 
+\begin{document}
+
+\input{lightcone}
+
+\end{document}

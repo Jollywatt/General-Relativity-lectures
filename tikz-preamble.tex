@@ -1,10 +1,14 @@
-\documentclass{standalone}
-
-
 \usepackage{tikz}
-\usepackage{pgfplots}
-\usepgfplotslibrary{colormaps}
+	\usetikzlibrary{shapes,arrows,calc,backgrounds}
+	\usetikzlibrary{external} 
+	
+	\tikzset{sketch/.append style={
+		% inner frame sep=0pt,
+		% \ifdraft framed, \else\fi
+	}}
 
+\usepackage{pgfplots}
+	\usepgfplotslibrary{colormaps}
 
 \pgfplotsset{
 	compat=1.8, % required for correct 3d label placement
@@ -27,10 +31,3 @@
 		xlabel={$\bar x$},ylabel={$\bar y$},zlabel={$\bar z$},
 	}
 }
-
- 
-\begin{document}
-
-\input{lightcone}
-
-\end{document}

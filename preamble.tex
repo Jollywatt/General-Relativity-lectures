@@ -8,13 +8,13 @@
 
 % paper size, margins, etc
 \usepackage[
-    a5paper,
-    twoside,
-    left=10mm, right=10mm, % horizontal margins
-    bindingoffset=10mm, % additional margin on binding edge
-    top=1cm, includehead, % margin to top of header
-    headsep=5mm, % distance from bottom of header to top of text
-    % \ifdraft showframe, \else\fi % draw margin outlines and things
+	a5paper,
+	twoside,
+	left=10mm, right=10mm, % horizontal margins
+	bindingoffset=10mm, % additional margin on binding edge
+	top=1cm, includehead, % margin to top of header
+	headsep=5mm, % distance from bottom of header to top of text
+	% \ifdraft showframe, \else\fi % draw margin outlines and things
 ]{geometry}
 
 
@@ -42,11 +42,11 @@
 
 % define normal header style with chapter and section names
 \fancypagestyle{headers}{ 
-    \fancyhead{}{}{} % clear header
-    \fancyfoot{}{}{} % clear footer
-    \fancyhead[RO,LE]{\thepage} % add page numbers on outer corners
-    \fancyhead[RE]{\leftmark} % add chapter title
-    \fancyhead[LO]{\rightmark} % add section title
+	\fancyhead{}{}{} % clear header
+	\fancyfoot{}{}{} % clear footer
+	\fancyhead[RO,LE]{\thepage} % add page numbers on outer corners
+	\fancyhead[RE]{\leftmark} % add chapter title
+	\fancyhead[LO]{\rightmark} % add section title
 }
 
 % define header style to be applied on chapter title pages
@@ -80,23 +80,30 @@
 \usepackage{anyfontsize}
 \usepackage{hyperref} % for digital versions
 \usepackage{kantlipsum}
-\usepackage[framemethod=default]{mdframed}
 
-\newenvironment{note}[1][Note]{ % Environment for outlined 'aside boxes'
-\vspace{-1.6ex}
-\begin{mdframed}[
-    frametitle={\colorbox{white}{\normalfont\emph{#1}}},
-    frametitleaboveskip=-1.6ex,
-    frametitlealignment=\raggedright,
-    font=\small,
-    linewidth=.3pt,
-    leftmargin=1cm,
-    rightmargin=1cm,]
-\vspace{-1.6ex}
-}{\end{mdframed}}
-    
+\usepackage[font=small]{caption}
 \usepackage[inline]{enumitem} % horizontal lists with starred environment
 % \usepackage{enumerate} % intuitive labelling
+
+\setlength{\parskip}{1ex}
+
+% Environment for outlined 'aside boxes'
+\usepackage[framemethod=default]{mdframed}
+\newenvironment{note}[1][Note]{ 
+\vspace{-1.6ex}
+\begin{mdframed}[
+	frametitle={\colorbox{white}{\normalfont\emph{#1}}},
+	frametitleaboveskip=-1.6ex,
+	frametitlealignment=\raggedright,
+	font=\small,
+	linewidth=.3pt,
+	leftmargin=1cm,
+	rightmargin=1cm,]
+\vspace{-1.6ex}
+}{\end{mdframed}}
+
+% Exercise label with checkbox
+\newcommand{\exercise}{{({Ex:}~\text{\fboxsep=-.15pt\fbox{\rule{0pt}{2ex}\rule{2ex}{0pt}}}\,)}}
 
 % Notes to editor(s)
 \newcommand{\alert}[1]{\ifdraft\textcolor{red}{\textbf{\underline{#1}}}\else\fi}
@@ -116,15 +123,13 @@
 % Environment for boxed equations, use as e.g., `\begin{eqbox}{align}...\end{eqnbox}`
 \NewEnviron{eqbox}[1]{\begin{empheq}[box=\fbox]{#1}\BODY\end{empheq}}
 
-\newenvironment{baligned}{\left\{\begin{aligned}}{\end{\aligned}\right.}
+% \newenvironment{baligned}{\left\{\begin{aligned}}{\end{\aligned}\right.}
+\NewEnviron{baligned}{\left\{\begin{aligned}\BODY\end{aligned}\right.}
 
 \input{symbols}
 
 % Replace equation number label with right-aligned little note
 \newcommand{\eqnote}[1]{\tag*{\small\emph{#1}}}
-
-% WARNING: `autonum` is buggy as hell. Package must be loaded as late as possible, and equation labels may only contain ASCII
-\usepackage{autonum} % show equation numbers only if they are referenced
 
 
 
@@ -132,38 +137,13 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
-\usepackage{tikz}
-    \usetikzlibrary{shapes,arrows,calc,backgrounds}
-    \usetikzlibrary{external} 
-    
-    \tikzset{sketch/.append style={
-        % inner frame sep=0pt,
-        % \ifdraft framed, \else\fi
-    }}
+\input{tikz-preamble}
 
-\tikzexternalize[prefix=tikzcache/]
+\tikzexternalize[prefix=tikzcache/] % cache tikz when compiling in main document
 
-\usepackage{pgfplots}
-    \usepgfplotslibrary{colormaps}
 
-\pgfplotsset{
-    compat=1.8, % required for correct 3d label placement
-    Frame/.style={
-        axis lines=center,
-        ticks=none,
-        width=4cm,height=4cm,
-        xmin=-1,xmax=1,
-        ymin=-1,ymax=1,
-        zmin=-1,zmax=1,
-        view={30}{20},
-        xlabel style={anchor=west},
-        ylabel style={anchor=south west},
-        zlabel style={anchor=south},
-        xlabel={$x$},ylabel={$y$},zlabel={$z$},
-        anchor=center,
-    },
-    Barred Frame/.style={
-        Frame,
-        xlabel={$\bar x$},ylabel={$\bar y$},zlabel={$\bar z$},
-    }
-}
+
+%% MISCELLANEOUS
+
+% WARNING: `autonum` is buggy as hell. Package must be loaded as late as possible, and equation labels may only contain ASCII
+\usepackage{autonum} % show equation numbers only if they are referenced

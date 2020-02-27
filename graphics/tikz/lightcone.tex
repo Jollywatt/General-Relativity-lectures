@@ -1,23 +1,42 @@
-\begin{tikzpicture}
-    \begin{axis}[
-        Frame,
-        width=10cm,height=10cm,
-        zlabel={$ct$},
-        xlabel={$x^i$},
-        ylabel={},
-        z buffer = sort,
-    ]
-    \addplot3[
-        % surf,
-        % shader = interp,
-        smooth,
-        opacity = 0.3,
-        mesh,
-        samples = 5,
-        samples y = 5,
-        domain = -1:1,
-        domain y = 0:360,
-        colormap={wbw}{rgb255=(255,255,255) rgb255=(0,0,0) rgb255=(255,255,255)},
-    ] ({x*sin(y)}, {x*cos(y)}, {x});
-    \end{axis}
+\begin{tikzpicture}[
+	point/.style={
+		circle,
+		fill,
+		inner sep=1pt,
+	},
+	smol/.style={
+		font=\small,
+	}
+]
+	\begin{axis}[
+		Frame,
+		width=6cm,height=7cm,
+		zlabel={$ct$},
+		xlabel={$x^i$},
+		ylabel={},
+		z buffer = sort,
+	]
+	\addplot3[
+		% surf,
+		% shader = interp,
+		smooth,
+		opacity = 0.3,
+		mesh,
+		samples = 7,
+		samples y = 17,
+		domain = -1:1,
+		domain y = 0:360,
+		colormap={wbw}{rgb255=(255,255,255) rgb255=(0,0,0) rgb255=(255,255,255)},
+	] ({x*sin(y)}, {x*cos(y)}, {x});
+
+	\node[point] (O) at (axis cs:0,0,0) {};
+	\node[point] (F) at (axis cs:0.3,0.3,1) {};
+	\node[point] (E) at (axis cs:-0.3,-0.3,0) {};
+	\node[point] (P) at (axis cs:-0.3,-0.3,-1) {};
+	\end{axis}
+
+	\node[smol,circle, inner sep=1pt, fill=white] at (O) {$P$};
+	\node[smol,above right] at (F) {future of $P$};
+	\node[smol,left] at (E) {elsewhere of $P$};
+	\node[smol,below] at (P) {past of $P$};
 \end{tikzpicture}

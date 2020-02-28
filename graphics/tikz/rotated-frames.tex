@@ -1,0 +1,27 @@
+\begin{tikzpicture}[baseline=-2ex]
+
+\begin{axis}[
+	Frame,
+	name=K,
+	view={30}{30},
+	ylabel style={above right},
+	zlabel={$z, \bar z$},
+]
+\end{axis}
+
+\begin{axis}[
+	Barred Frame,
+	name=KBAR,
+	at=(K),
+	view={30}{30},
+	% rotate around x=35,
+	rotate around z=-30,
+	xlabel style={below},
+	ylabel style={right},
+	zlabel={},
+]
+\end{axis}
+
+\node at (0, -1.2) {\small\em(isotropy of spacetime)};
+
+\end{tikzpicture}

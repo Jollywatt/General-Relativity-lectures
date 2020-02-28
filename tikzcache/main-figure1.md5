@@ -1,1 +1,1 @@
-\def \tikzexternallastkey {39E057F2C0C60DBA6774E069DE8798E5}%
+\begingroup \toks 0={macro:->[sketch] \par \begin {axis}[ Frame, name=K, ] \end {axis} \par \begin {axis}[ Barred Frame, name=KBAR, at={($(K) + (15:3cm)$)}, ] \end {axis} \par \draw [->,dashed] (K.center) --node[above] {$\ts a$} (KBAR.center); \par \node [anchor=north west] at (.3, -.4) {\small \em (homogeneity of spacetime)}; \par }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

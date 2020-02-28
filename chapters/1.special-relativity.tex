@@ -7,7 +7,7 @@ See \cite[ch~1]{schutz2009first} and \cite[ch 5, 12, 13]{doughty2018lagrangian}.
 \noindent
 Assumptions of Special Relativity:
 \begin{enumerate}
-	\item The world is described by a 4-dimensional continuum, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^\mu$,
+	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^\mu$,
 	\begin{align}
 		x^\mu \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
 	.\end{align}
@@ -35,12 +35,12 @@ Postulates of Special Relativity:
 	and this value is the same in all inertial frames.
 \end{enumerate}
 	
-For photons, \exercise
+For photons,
 \begin{align}
 	c = \underset{\text{frame $K$}}{\qty|\dv{\uvec x}{t}|} = \underset{\text{frame $K'$}}{\qty|\dv{\uvec x'}{t}|}
 	\label{eqn:photon-speed}
 .\end{align}
-Rewriting \eqref{eqn:photon-speed} we see that, for photons, \exercise
+Rewriting \eqref{eqn:photon-speed} we see that, for photons,
 \begin{align}
 	\underset{\text{frame $K$}}{(\dd x)^2 + (\dd y)^2 + (\dd z)^2 - c^2(\dd t)^2}
 	= \underset{\text{frame $K'$}}{(\dd x')^2 + (\dd y')^2 + (\dd z')^2 - c^2(\dd t')^2} = 0
@@ -156,17 +156,19 @@ A transformation belonging to the (homogeneous) Lorentz group $\O(1,3)$ can be r
 	However, in S.R.\ we may represent events by their associated displacement vector relative to a chosen orthogonal inertial frame.
 \end{note}
 
+\noindent
 The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 \begin{itemize}
 	\item \textbf{Rotations,} e.g., about the $z$-axis (in the $xy$-plane) by an angle $\theta$;
 	\begin{align}
-		L_R(\theta) = \mqty(
+		L_R(\theta) &= \mqty(
 			1 & 0 & 0 & 0 \\
 			0 & \cos\theta & -\sin\theta & 0 \\
 			0 & \sin\theta & \cos\theta & 0 \\
 			0 & 0 & 0 & 1 \\
 		)
-	.\end{align}
+	.&	&\input{graphics/tikz/rotated-frames}
+	\end{align}
 	
 	\item \textbf{Boosts,} e.g., by a velocity $\uvec v$ in the $x$-direction;
 	\begin{align}
@@ -187,12 +189,15 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 	\end{math}
 	is the \textit{rapidity parameter}.
 	In terms of the velocity $\beta \equiv \frac{v}{c}$, one has $\cosh\alpha = \frac1{\sqrt{1 - \beta^2}} \equiv \gamma$ and $\sinh\alpha = \frac{\beta}{\sqrt{1 - \beta^2}} \equiv \beta\gamma$.
+
+	\begin{note}
+	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric.
+	Formally, an $x$-boost of rapidity $\alpha$ is equivalent to a rotation by an `imaginary angle' $\alpha' = i\alpha$ through the $\tau x$-plane, where $\tau = it$ is `imaginary time'... though this is not a good picture physically!
+	\end{note}
+
 \end{itemize}
 
-\begin{note}
-Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric.
-Formally, an $x$-boost of rapidity $\alpha$ is equivalent to a rotation by an `imaginary angle' $\alpha' = i\alpha$ through the $\tau x$-plane, where $\tau = it$ is `imaginary time'... though this is not a good picture physically!
-\end{note}
+\noindent
 An important difference between rotations and boosts is that, where $0 \le \theta < 2\pi$ for rotations, we have $-\infty < \alpha < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2\pi)$ is compact, but $\mathbb{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathbb{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
 
 Both rotations and boosts depend on continuous parameters ($\theta$ or $\alpha$).
@@ -248,7 +253,7 @@ We define the subgroup of restricted Lorentz transformations by adding two condi
 We have removed the discrete transformations involving $ P$ and $ T$, so that $\SO^+(1,3)$ is \emph{continuous} and \emph{connected}, unlike $\O(1,3)$.
 
 \begin{note}[Notation]
-	The $\mathrm{S}$ in $\SO^+(1,3)$ refers to the condition $\det\Lambda = 1$, and the $^+$ refers to the orthochronous condition.
+	The $\mathrm{S}$ in $\SO^+(1,3)$ refers to the condition $\det\Lambda = 1$, and the $^+$ refers to orthochronality.
 	Sometimes $\SO^+(1,3)$ is simply written as $\SO(1,3)$.
 \end{note}
 
@@ -276,6 +281,7 @@ Unrestricted groups may be reconstructed by reintroducing the discrete transform
 \section{The Causal Structure of Minkowski Spacetime}
 
 Because of the indefiniteness of the Minkowski metric (and hence of the Minkowski scalar product), 4-vectors can have positive, zero or negative norm.
+\\
 A 4-vector $\ts V$ is called
 \begin{math}
 	\begin{baligned}
@@ -320,11 +326,11 @@ The \textbf{proper time interval} $\dd\tau$ between two neighbouring events alon
 \end{align}
 
 \begin{note}
-	Since $\dd x$ is timelike, $\eta_{\mu\nu}\dd x^\mu\dd x^\nu < 0$, hence the minus sign.
-	Proper time is not defined for spacelike intervals, since the above definition would yield an imaginary time.
+	Since $\dd x$ is timelike, $\eta_{\mu\nu}\dd x^\mu\dd x^\nu < 0$, so \eqref{eqn:def-proper-time} contains a minus sign.
+	Proper time is not defined for spacelike intervals, since this would yield an imaginary time.
 	Instead, proper distance is defined by $\dd\ell^2 = \eta_{\mu\nu}\dd x^\mu\dd x^\nu$.
 \end{note}
-Proper time is the time \emph{experienced} by the particle; i.e., the time that would be measured by a clock moving on the same worldline.
+Proper time is the time \emph{experienced} by the particle, i.e., the time that would be measured by a clock moving on the same worldline.
 
 Suppose we have a worldline $x^\mu(\lambda)$.
 Integrate $\dd\tau$ via \eqref{eqn:def-proper-time} along the path to get the total proper time elapsed between events $x^\mu(\lambda_i)$ and $x^\mu(\lambda_f)$.
@@ -334,6 +340,7 @@ Integrate $\dd\tau$ via \eqref{eqn:def-proper-time} along the path to get the to
 \end{align}
 \begin{note}
 	The proper time elapsed depends on the path taken between the two events.
+	(See the Twin Paradox.)
 \end{note}
 
 Particle worldlines can be characterised by an action principle: variation of \eqref{eqn:total-proper-time} with respect to the trajectories, $\delta x^\mu(\lambda)$, yields the equations of motion $\pdv[2]{x^\mu}{\lambda} = 0$ (holding $\delta x^\mu = 0$ fixed at both ends) \exercise.

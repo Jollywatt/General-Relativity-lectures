@@ -4,17 +4,27 @@
 \newif\ifdraft % whether to show guides, annotations, etc
 \draftfalse
 
+\newif\ifbooklet % true builds as a5, false as a4
+\booklettrue
+
 %% LAYOUT
 
 % paper size, margins, etc
 \usepackage[
-	a5paper,
 	twoside,
-	left=10mm, right=10mm, % horizontal margins
-	bindingoffset=10mm, % additional margin on binding edge
-	top=1cm, includehead, % margin to top of header
-	headsep=5mm, % distance from bottom of header to top of text
-	% \ifdraft showframe, \else\fi % draw margin outlines and things
+	\ifdraft showframe, \else\fi % draw margin outlines and things
+	\ifbooklet
+		a5paper,
+		left=10mm, right=10mm, % horizontal margins
+		bindingoffset=10mm, % additional margin on binding edge
+		top=1cm, includehead, % margin to top of header
+		headsep=5mm, % distance from bottom of header to top of text
+	\else
+		a4paper,
+		left=25mm, right=25mm, % horizontal margins
+		bottom=25mm,
+		bindingoffset=10mm, % additional margin on binding edge
+	\fi
 ]{geometry}
 
 
@@ -142,7 +152,7 @@
 
 \input{tikz-preamble}
 
-\tikzexternalize[prefix=tikzcache/] % cache tikz when compiling in main document
+% \tikzexternalize[prefix=tikzcache/] % cache tikz when compiling in main document
 
 
 

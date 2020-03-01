@@ -7,13 +7,13 @@ See \cite[ch~1]{schutz2009first} and \cite[ch 5, 12, 13]{doughty2018lagrangian}.
 \noindent
 Assumptions of Special Relativity:
 \begin{enumerate}
-	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^\mu$,
+	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^μ$,
 	\begin{align}
-		% x^\mu \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
+		% x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
 		\uvec{ x}
 	.\end{align}
 	\begin{note}[Notation]
-	Greek indices, $\mu,\nu$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
+	Greek indices, $μ, ν$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
 	Latin indices (mid-alphabet), $i,j,k$ run over \textit{spatial} index values; $\qty{1,2,3}$.
 	$\ts x$ is a 4-vector (twiddle); $\uvec x$ is a 3-vector (under bar).
 	\end{note}
@@ -26,7 +26,7 @@ Assumptions of Special Relativity:
 Postulates of Special Relativity:
 \begin{enumerate}
 	\item \textsc{Principle of Relativity:}
-	The laws of physics are invariant under transformations $x^\nu \to x^{\bar\mu}(x^\nu)$ from one inertial frame to another (and such transformations form a group).
+	The laws of physics are invariant under transformations $x^ν \to x^{\barμ}(x^ν)$ from one inertial frame to another (and such transformations form a group).
 	
 	\item \textsc{Constancy of the Speed of Light:} There exists an invariant upper bound on all velocities
 	\begin{align}
@@ -46,20 +46,20 @@ Rewriting \eqref{eqn:photon-speed} we see that, for photons,
 	\underset{\text{frame $K$}}{(\dd x)^2 + (\dd y)^2 + (\dd z)^2 - c^2(\dd t)^2}
 	= \underset{\text{frame $K'$}}{(\dd x')^2 + (\dd y')^2 + (\dd z')^2 - c^2(\dd t')^2} = 0
 .\end{align}
-This suggests the definition of the \textbf{spacetime interval} between any neighbouring events $x^\mu$ and $x^\mu + \dd x^\mu$ as
+This suggests the definition of the \textbf{spacetime interval} between any neighbouring events $x^μ$ and $x^μ + \dd x^μ$ as
 \begin{align}
 	\dd s^2 &\equiv -c^2\dd t^2 + \dd x^2 + \dd y^2 + \dd z^2
-\\  &= \eta_{\mu\nu}\dd x^\mu \dd x^\nu
+\\  &= η_{μν}\dd x^μ \dd x^ν
 	\eqnote{...pseudo-Riemannian structure}
-\intertext{where $x^\mu = (x^0, x^i) = (ct, x, y, z)$ and where}
-	\eta_{\mu\nu} &= \smqty(\dmat{-1,+1,+1,+1})
+\intertext{where $x^μ = (x^0, x^i) = (ct, x, y, z)$ and where}
+	η_{μν} &= \smqty(\dmat{-1,+1,+1,+1})
 	\equiv \operatorname{diag}\qty(-1, +1, +1, +1)
 	\equiv -1 \oplus \mathds{1}_3
 .\end{align}
 For photons, $\dd s^2 = 0$.
 Using the two postulates, one may show that the interval $\dd s^2$ is invariant with respect to coordinates based in any inertial frame \cite[\S1.6]{schutz2009first}.
 \begin{align}
-	\dd s^2 = \eta_{\mu\nu}\dd x^\mu \dd x^\nu = \eta_{\bar\mu\bar\nu}\dd x^{\bar\mu} \dd x^{\bar\nu}
+	\dd s^2 =η{μν}\dd x^μ \dd x^ν = η_{\barμ\barν}\dd x^{\barμ} \dd x^{\barν}
 	\label{eqn:def-spacetime-interval}
 .\end{align}
 
@@ -69,7 +69,7 @@ Using the two postulates, one may show that the interval $\dd s^2$ is invariant 
 
 	\item The first postulate alone implies either S.R.\ or its $c \to \infty$ limit (a.k.a.\ Galilean relativity).
 
-	\item Formally, $\dd x^\mu\dd x^\nu$ is shorthand for the \textit{tensor product} $\dd x^\mu \otimes \dd x^\nu$, and you will see that $\dd s^2 = \ts\eta$ is really the \emph{metric tensor}...
+	\item Formally, $\dd x^μ\dd x^ν$ is shorthand for the \textit{tensor product} $\dd x^μ \otimes \dd x^ν$, and you will see that $\dd s^2 = \tsη$ is really the \emph{metric tensor}...
 \end{itemize}
 \end{note}
 
@@ -78,49 +78,49 @@ Using the two postulates, one may show that the interval $\dd s^2$ is invariant 
 
 In an inertial frame $K$, the equations of motion of a free particle are linear;
 \begin{align}
-	\dv[2]{x^\mu}{\lambda} &= 0
+	\dv[2]{x^μ}{λ} &= 0
 &   &\iff
-&   x^\mu &= x_0^\mu + u^\mu\lambda
+&   x^μ &= x_0^μ + u^μλ
 ,\end{align}
-where $x_0^\mu, u^\mu$ are constant and $\lambda$ is a parameter.
+where $x_0^μ, u^μ$ are constant and $λ$ is a parameter.
 Similarly, in any other inertial frame $\bar K$,
 \begin{align}
-	\dv[2]{x^{\bar\mu}}{\lambda} &= 0
+	\dv[2]{x^{\barμ}}{λ} &= 0
 &   &\iff
-&   x^{\bar\mu} &= x_0^{\bar\mu} + u^{\bar\mu}\lambda
+&   x^{\barμ} &= x_0^{\barμ} + u^{\barμ}λ
 .\end{align}
 Now,
 \begin{align}
-	\dv{x^{\bar\mu}}{\lambda} &= \pdv{x^{\bar\mu}}{x^\nu}\dv{x^\nu}{\lambda} = \pdv{x^{\bar\mu}}{x^\nu}u^\nu
+	\dv{x^{\barμ}}{λ} &= \pdv{x^{\barμ}}{x^ν}\dv{x^ν}{λ} = \pdv{x^{\barμ}}{x^ν}u^ν
 	\eqnote{...chain rule}
 \\\implies
-	0 &= \dv[2]{x^{\bar\mu}}{\lambda} = \pdv{x^\alpha}\qty(\pdv{x^{\bar\mu}}{x^\nu}u^\nu)u^\alpha
-	= \pdv[2]{x^{\bar\mu}}{x^\alpha}{x^\nu}u^\nu u^\alpha
-	\eqnote{$\because \; u^\nu$ constant}
-\\\implies 0 &= \pdv[2]{x^{\bar\mu}}{x^\alpha}{x^\nu}
-	\eqnote{...since true $\forall u^\alpha$}
+	0 &= \dv[2]{x^{\barμ}}{λ} = \pdv{x^α}\qty(\pdv{x^{\barμ}}{x^ν}u^ν)u^α
+	= \pdv[2]{x^{\barμ}}{x^α}{x^ν}u^ν u^α
+	\eqnote{$\because \; u^ν$ constant}
+\\\implies 0 &= \pdv[2]{x^{\barμ}}{x^α}{x^ν}
+	\eqnote{...since true $\forall u^α$}
 .\end{align}
 So the required transformation between inertial frames is \textit{linear};
 \begin{eqbox}
-	x^{\bar\mu} = L^{\bar\mu}{}_\nu x^\nu + a^{\bar\mu}
+	x^{\barμ} = L^{\barμ}{}_ν x^ν + a^{\barμ}
 	\label{eqn:Poincare-coord-transform}
 ,\end{eqbox}
-where $a^{\bar\mu}$ and $L^{\bar\mu}{}_\nu \equiv \pdv{x^{\bar\mu}}{x^nu}$ are constants.
+where $a^{\barμ}$ and $L^{\barμ}{}_ν \equiv \pdv{x^{\barμ}}{x^nu}$ are constants.
 Differentiate \eqref{eqn:Poincare-coord-transform} and substitute into \eqref{eqn:def-spacetime-interval} to give
 \begin{math}
-	\eta_{\mu\nu}\dd x^\mu\dd x^\nu
-	= \eta_{\bar\mu\bar\nu}L^{\bar\mu}{}_\mu L^{\bar\nu}{}_\nu\dd x^\mu\dd x^\nu
+	η_{μν}\dd x^μ\dd x^ν
+	= η_{\barμ\barν}L^{\barμ}{}_μ L^{\barν}{}_ν\dd x^μ\dd x^ν
 .\end{math}
-Since this is true $\forall \, \dd x^\mu$,
+Since this is true $\forall \, \dd x^μ$,
 \begin{eqbox}
-	\eta_{\bar\mu\bar\nu}L^{\bar\mu}{}_\mu L^{\bar\nu}{}_\nu
-	= \eta_{\mu\nu}
+	η_{\barμ\barν}L^{\barμ}{}_μ L^{\barν}{}_ν
+	= η_{μν}
 	\label{eqn:Lorentz-matrix-condition}
 .\end{eqbox}
 In matrix form, \eqref{eqn:Poincare-coord-transform} and \eqref{eqn:Lorentz-matrix-condition} are
 \begin{eqbox}[gather]
 	\ts{\bar x} = L\ts{x} + \ts{a} \tag{\ref{eqn:Poincare-coord-transform}a}
-,\\  L\transpose \eta L = \eta \tag{\ref{eqn:Lorentz-matrix-condition}a}
+,\\  L\transpose η L = η \tag{\ref{eqn:Lorentz-matrix-condition}a}
 .\end{eqbox}
 
 Transformations $\ts x \mapsto \ts{\bar x}$ defined by \eqref{eqn:Poincare-coord-transform},~\eqref{eqn:Lorentz-matrix-condition} are the \textit{inhomogeneous} Lorentz transformations, or \textbf{Poincaré transformations}, and form the Poincaré group $\mathrm{IO}(1,3)$ (pronounced Inhomogeneous Orthogonal group).
@@ -134,20 +134,20 @@ Transformations $\ts x \mapsto \ts{\bar x}$ defined by \eqref{eqn:Poincare-coord
 
 ``Inhomogeneous'' refers to the inclusion of spacetime translations
 \begin{math}
-	x^\nu \mapsto x^{\bar\mu} = \delta^{\bar\mu}{}_\nu x^\nu + a^{\bar\mu}
+	x^ν \mapsto x^{\barμ} = δ^{\barμ}{}_ν x^ν + a^{\barμ}
 ,\end{math}
 which form a subgroup $\mathrm{T}^4$ of the Poincaré group.
-If we set $a^{\bar\mu} = 0$ in \eqref{eqn:Poincare-coord-transform}, we are left with \textit{homogeneous} transformations, called simply the \textbf{Lorentz transformations}.
+If we set $a^{\barμ} = 0$ in \eqref{eqn:Poincare-coord-transform}, we are left with \textit{homogeneous} transformations, called simply the \textbf{Lorentz transformations}.
 
 
-In G.R., our task is to generalise these ideas to general coordinate frames for which $L^{\bar\mu}{}_\nu$ are not necessarily constant.
+In G.R., our task is to generalise these ideas to general coordinate frames for which $L^{\barμ}{}_ν$ are not necessarily constant.
 
 
 \subsection{Examples of Lorentz Transformations}
 
-A transformation belonging to the (homogeneous) Lorentz group $\O(1,3)$ can be represented as a matrix acting on coordinates $x^\mu$ when they are \emph{viewed as vectors.}
+A transformation belonging to the (homogeneous) Lorentz group $\O(1,3)$ can be represented as a matrix acting on coordinates $x^μ$ when they are \emph{viewed as vectors.}
 \begin{align}
-	x^\mu \cong \ts{x} = \smqty(x^0 \\ x^1 \\ x^2 \\ x^3)
+	x^μ \cong \ts{x} = \smqty(x^0 \\ x^1 \\ x^2 \\ x^3)
 	= \smqty(t \\ x \\ y \\ z)
 \end{align}
 % Note that spacetime events (i.e., \textit{points} in spacetime) should not generally be thought of as \textit{vectors}---except when the spacetime is flat and the coordinates are expressed relative to a nearby orthogonal frame, as we assume here.
@@ -160,12 +160,12 @@ A transformation belonging to the (homogeneous) Lorentz group $\O(1,3)$ can be r
 \noindent
 The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 \begin{itemize}
-	\item \textbf{Rotations,} e.g., about the $z$-axis (in the $xy$-plane) by an angle $\theta$;
+	\item \textbf{Rotations,} e.g., about the $z$-axis (in the $xy$-plane) by an angle $θ$;
 	\begin{align}
-		L_R(\theta) &= \mqty(
+		L_R(θ) &= \mqty(
 			1 & 0 & 0 & 0 \\
-			0 & \cos\theta & -\sin\theta & 0 \\
-			0 & \sin\theta & \cos\theta & 0 \\
+			0 & \cosθ & -\sinθ & 0 \\
+			0 & \sinθ & \cosθ & 0 \\
 			0 & 0 & 0 & 1 \\
 		)
 	.&	&\input{graphics/tikz/rotated-frames}
@@ -173,35 +173,35 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 	
 	\item \textbf{Boosts,} e.g., by a velocity $\uvec v$ in the $x$-direction;
 	\begin{align}
-		L_B(\alpha) = \mqty(
-			\cosh\alpha & -\sinh\alpha & 0 & 0 \\
-			-\sinh\alpha & \cosh\alpha & 0 & 0 \\
+		L_B(α) = \mqty(
+			\coshα & -\sinhα & 0 & 0 \\
+			-\sinhα & \coshα & 0 & 0 \\
 			0 & 0 & 1 & 0 \\
 			0 & 0 & 0 & 1 \\
 		) = \mqty(
-			\cos i\alpha & i\sin i\alpha & 0 & 0 \\
-			i\sin i\alpha & \cos i\alpha & 0 & 0 \\
+			\cos iα & i\sin iα & 0 & 0 \\
+			i\sin iα & \cos iα & 0 & 0 \\
 			0 & 0 & 1 & 0 \\
 			0 & 0 & 0 & 1 \\
 		)
 	,\end{align}
 	where \begin{math}
-		\alpha = \tanh^{-1}\frac{v}{c}
+		α = \tanh^{-1}\frac{v}{c}
 	\end{math}
 	is the \textit{rapidity parameter}.
-	In terms of the velocity $\beta \equiv \frac{v}{c}$, one has $\cosh\alpha = \frac1{\sqrt{1 - \beta^2}} \equiv \gamma$ and $\sinh\alpha = \frac{\beta}{\sqrt{1 - \beta^2}} \equiv \beta\gamma$.
+	In terms of the velocity $\beta \equiv \frac{v}{c}$, one has $\coshα = \frac1{\sqrt{1 - \beta^2}} \equiv γ$ and $\sinhα = \frac{\beta}{\sqrt{1 - \beta^2}} \equiv \betaγ$.
 
 	\begin{note}
 	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric.
-	Formally, an $x$-boost of rapidity $\alpha$ is equivalent to a rotation by an `imaginary angle' $\alpha' = i\alpha$ through the $\tau x$-plane, where $\tau = it$ is `imaginary time'... though this is not a good picture physically!
+	Formally, an $x$-boost of rapidity $α$ is equivalent to a rotation by an `imaginary angle' $α' = iα$ through the $τx$-plane, where $τ = it$ is `imaginary time'... though this is not a good picture physically!
 	\end{note}
 
 \end{itemize}
 
 \noindent
-An important difference between rotations and boosts is that, where $0 \le \theta < 2\pi$ for rotations, we have $-\infty < \alpha < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2\pi)$ is compact, but $\mathbb{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathbb{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
+An important difference between rotations and boosts is that, where $0 \le θ < 2π$ for rotations, we have $-\infty < α < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2π)$ is compact, but $\mathbb{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathbb{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
 
-Both rotations and boosts depend on continuous parameters ($\theta$ or $\alpha$).
+Both rotations and boosts depend on continuous parameters ($θ$ or $α$).
 However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformations...
 \begin{itemize}
 
@@ -217,7 +217,7 @@ However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformatio
 	Notice that $P$ is \textit{not} equivalent to a rotation; it transforms a right-handed frame into a left and vice versa, since $\det P = -1$.
 
 	\begin{note}
-	In even spatial dimensions, the transformation $R = \operatorname{diag}(1, -\mathds{1}_{2n})$ is \textit{not} a parity transformation; it is a rotation by $\pi$ and $\det R = 1$.
+	In even spatial dimensions, the transformation $R = \operatorname{diag}(1, -\mathds{1}_{2n})$ is \textit{not} a parity transformation; it is a rotation by $π$ and $\det R = 1$.
 	In these cases, inversions $x_i \mapsto -x_i$ of a \textit{single} spatial coordinate are parity transformations.
 	\end{note}
 
@@ -228,9 +228,9 @@ However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformatio
 \end{itemize}
 
 The Lorentz matrix condition \eqref{eqn:Lorentz-matrix-condition} implies that $(\det L)^2 = 1 \iff \det L = \pm 1$ for any Lorentz transformation $L \in \O(1,3)$.
-Those with $\det L = +1$ and those with $\det L = -1$ form two disconnected pieces of $\O(1,3)$, but only the first piece contains the identity transformation $\delta^{\bar\mu}{}_\nu$.
+Those with $\det L = +1$ and those with $\det L = -1$ form two disconnected pieces of $\O(1,3)$, but only the first piece contains the identity transformation $δ^{\barμ}{}_ν$.
 
-Inspecting the $\bar\mu\nu = \bar00$ component of \eqref{eqn:Lorentz-matrix-condition} gives
+Inspecting the $\barμν = \bar00$ component of \eqref{eqn:Lorentz-matrix-condition} gives
 \begin{align}
 	\qty(L^{\bar0}{}_0)^2 - \sum_{\bar k = 1}^3\qty(L^{\bar k}{}_0)^2 = 1
 	\implies
@@ -247,24 +247,24 @@ We define the subgroup of restricted Lorentz transformations by adding two condi
 	\item have determinant unity.
 \end{enumerate*}
 \begin{align}
-	\SO^+(1,3) \equiv \qty{\Lambda \;\middle|\; \Lambda\transpose\eta\Lambda = \eta,
-	\Lambda^{\bar0}{}_0 \ge 1, \det\Lambda = 1}
+	\SO^+(1,3) \equiv \qty{Λ \suchthat Λ\transposeηΛ = η,
+	Λ^{\bar0}{}_0 \ge 1, \detΛ = 1}
 	\label{eqn:def-restricted-Lorentz-group}
 \end{align}
 We have removed the discrete transformations involving $ P$ and $ T$, so that $\SO^+(1,3)$ is \emph{continuous} and \emph{connected}, unlike $\O(1,3)$.
 
 \begin{note}[Notation]
-	The $\mathrm{S}$ in $\SO^+(1,3)$ refers to the condition $\det\Lambda = 1$, and the $^+$ refers to orthochronality.
+	The $\mathrm{S}$ in $\SO^+(1,3)$ refers to the condition $\detΛ = 1$, and the $^+$ refers to orthochronality.
 	Sometimes $\SO^+(1,3)$ is simply written as $\SO(1,3)$.
 \end{note}
 
 Groups whose elements may be continuously parametrised are \textbf{Lie groups}.
-The translation group $\mathrm{T}^4$ (parametrised continuously by $\Delta x^\mu$) and the rotation group $\SO(3)$ (parametrised continuously by three angles) are examples of \emph{connected} Lie groups.
+The translation group $\mathrm{T}^4$ (parametrised continuously by $Δx^μ$) and the rotation group $\SO(3)$ (parametrised continuously by three angles) are examples of \emph{connected} Lie groups.
 
 Reintroducing translations to the restricted Lorentz group gives the restricted Poincaré group $\mathrm{ISO}^+(1,3)$---also a connected Lie group.
 Unrestricted groups may be reconstructed by reintroducing the discrete transformations;
 \begin{align}
-	\O(1,3) = \qty{\Lambda, \Lambda P, \Lambda T, \Lambda PT \mid \Lambda \in \SO^+(1,3)}
+	\O(1,3) = \qty{Λ, Λ P, Λ T, Λ PT \suchthat Λ \in \SO^+(1,3)}
 .\end{align}
 
 
@@ -293,7 +293,7 @@ A 4-vector $\ts V$ is called
 \end{math}
 if 
 \begin{math}
-	\ts V \cdot \ts V = V_\mu V^\mu = \eta_{\mu\nu}V^\mu V^\nu
+	\ts V \cdot \ts V = V_μ V^μ = η_{μν}V^μ V^ν
 	\begin{baligned}
 		&< 0
 	\\	&= 0
@@ -315,28 +315,28 @@ if
 \end{wrapfigure}
 By the second postulate, all \emph{causally connected} events relative to an event $P$ lie in its future or past lightcone, because $P$ cannot causally influence events outside the lightcone without transmitting superluminal data.
 
-A particle's \textbf{worldline} is a curve $x^\mu = x^\mu(\lambda)$ whose tangent $\ts V$ given by $V^\mu = \dv{x^\mu}{\lambda}$ is everywhere timelike; $V^\mu V_\mu < 0$.
+A particle's \textbf{worldline} is a curve $x^μ = x^μ(λ)$ whose tangent $\ts V$ given by $V^μ = \dv{x^μ}{λ}$ is everywhere timelike; $V^μ V_μ < 0$.
 This implies that, in an inertial frame, the particles velocity $\uvec v$ is subluminal $|\uvec v| < c$ \exercise.
 
 Consider a freely moving particle whose (timelike) worldline unit tangent vector is $\ts V$.
-There always exists a Lorentz transformation which sends a timelike unit vector to $V^\mu \mapsto V^{\bar\mu} = (1, 0, 0, 0)$ \exercise.
-The \textbf{proper time interval} $\dd\tau$ between two neighbouring events along the particle's worldline is defined as the interval of time measured in the particle's instantaneous rest frame.
+There always exists a Lorentz transformation which sends a timelike unit vector to $V^μ \mapsto V^{\barμ} = (1, 0, 0, 0)$ \exercise.
+The \textbf{proper time interval} $\ddτ$ between two neighbouring events along the particle's worldline is defined as the interval of time measured in the particle's instantaneous rest frame.
 \begin{align}
-	c^2\dd\tau^2 = -\eta_{\mu\nu}\dd x^\mu\dd x^\nu
+	c^2\ddτ^2 = -η_{μν}\dd x^μ\dd x^ν
 	\label{eqn:def-proper-time}
 \end{align}
 
 \begin{note}
-	Since $\dd x$ is timelike, $\eta_{\mu\nu}\dd x^\mu\dd x^\nu < 0$, so \eqref{eqn:def-proper-time} contains a minus sign.
+	Since $\dd x$ is timelike, $η_{μν}\dd x^μ\dd x^ν < 0$, so \eqref{eqn:def-proper-time} contains a minus sign.
 	Proper time is not defined for spacelike intervals, since this would yield an imaginary time.
-	Instead, proper distance is defined by $\dd\ell^2 = \eta_{\mu\nu}\dd x^\mu\dd x^\nu$.
+	Instead, proper distance is defined by $\dd\ell^2 = η_{μν}\dd x^μ\dd x^ν$.
 \end{note}
 Proper time is the time \emph{experienced} by the particle, i.e., the time that would be measured by a clock moving on the same worldline.
 
-Suppose we have a worldline $x^\mu(\lambda)$.
-Integrate $\dd\tau$ via \eqref{eqn:def-proper-time} along the path to get the total proper time elapsed between events $x^\mu(\lambda_i)$ and $x^\mu(\lambda_f)$.
+Suppose we have a worldline $x^μ(λ)$.
+Integrate $\ddτ$ via \eqref{eqn:def-proper-time} along the path to get the total proper time elapsed between events $x^μ(λ_i)$ and $x^μ(λ_f)$.
 \begin{align}
-	\Delta\tau = \frac1c \int_{\lambda_i}^{\lambda_f} \dd\lambda \, \sqrt{-\eta_{\mu\nu}\dv{x^\mu}{\lambda}\dv{x^\nu}{\lambda}}
+	\Deltaτ = \frac1c \int_{λ_i}^{λ_f} \ddλ \, \sqrt{-η_{μν}\dv{x^μ}{λ}\dv{x^ν}{λ}}
 	\label{eqn:total-proper-time}
 \end{align}
 \begin{note}
@@ -344,16 +344,16 @@ Integrate $\dd\tau$ via \eqref{eqn:def-proper-time} along the path to get the to
 	(See the Twin Paradox.)
 \end{note}
 
-Particle worldlines can be characterised by an action principle: variation of \eqref{eqn:total-proper-time} with respect to the trajectories, $\delta x^\mu(\lambda)$, yields the equations of motion $\pdv[2]{x^\mu}{\lambda} = 0$ (holding $\delta x^\mu = 0$ fixed at both ends) \exercise.
+Particle worldlines can be characterised by an action principle: variation of \eqref{eqn:total-proper-time} with respect to the trajectories, $δx^μ(λ)$, yields the equations of motion $\pdv[2]{x^μ}{λ} = 0$ (holding $δx^μ = 0$ fixed at both ends) \exercise.
 In fact, the extremised trajectory minimises the proper time---\emph{freely falling particles take the path of maximum proper time.}
 
 By \eqref{eqn:def-proper-time},
 \begin{math}
-	c^2\dd\tau^2 = -\dd t^2 + \sum_i(\dd x^i)^2 = \dd t^2\qty(-1 + \uvec v\cdot\uvec v)
+	c^2\ddτ^2 = -\dd t^2 + \sum_i(\dd x^i)^2 = \dd t^2\qty(-1 + \uvec v\cdot\uvec v)
 \end{math}
 where $v^i \equiv \dv{x^i}{t}$ so
 \begin{align}
-	\dd\tau = \sqrt{1 - \frac{v^2}{c^2}}\dd t \equiv \gamma\dd t
+	\ddτ = \sqrt{1 - \frac{v^2}{c^2}}\dd t \equiv γ\dd t
 	\label{eqn:gamma-factor}
 \end{align}
 is the proper time of a frame moving at velocity $\uvec v$ relative to a frame with coordinates $(ct, x^i)$.
@@ -361,17 +361,17 @@ is the proper time of a frame moving at velocity $\uvec v$ relative to a frame w
 
 \subsection{4-velocity}
 
-Since proper time $\dd\tau$ is an \emph{invariant}, we are motivated to define the 4-vector
+Since proper time $\ddτ$ is an \emph{invariant}, we are motivated to define the 4-vector
 \begin{align}
-	u^\mu \equiv \dv{x^\mu}{\tau}
-	= \dv{t}{\tau}\qty(c, \dv{\uvec x}{t})
-	= \gamma(c, \uvec v)
+	u^μ \equiv \dv{x^μ}{τ}
+	= \dv{t}{τ}\qty(c, \dv{\uvec x}{t})
+	= γ(c, \uvec v)
 ,\end{align}
-where $\gamma$ is defined as in \eqref{eqn:gamma-factor}.
-In the particle's instantaneous rest frame, $\|\uvec v\|^2 = u^iu_i = 0$, so that $u^\mu u_\mu = u^0u_0 = -c^2$.
+where $γ$ is defined as in \eqref{eqn:gamma-factor}.
+In the particle's instantaneous rest frame, $\|\uvec v\|^2 = u^iu_i = 0$, so that $u^μ u_μ = u^0u_0 = -c^2$.
 However, since this is an invariant (it is a scalar, which does not transform under Poincaré transformations), we have
 \begin{eqbox}
-	\|\ts u\|^2 \equiv \ts u \cdot \ts u \equiv u^\mu u_\mu = -c^2
+	\|\ts u\|^2 \equiv \ts u \cdot \ts u \equiv u^μ u_μ = -c^2
 \end{eqbox}
 in \emph{all frames}.
 
@@ -381,15 +381,15 @@ in \emph{all frames}.
 Relativistic 4-momentum is defined by
 \begin{align}
 	\ts p \equiv m\ts u &= \qty(\frac{E}{c}, \uvec p)
-,&	E &= \gamma mc^2
-,&	\uvec p &= \gamma m\uvec v
+,&	E &= γmc^2
+,&	\uvec p &= γm\uvec v
 	\label{eqn:4-momentum}
 .\end{align}
 This form of 4-momentum may be deduced from an action using the Hamiltonian approach.
 We want to extremise \eqref{eqn:def-spacetime-interval}, but first multiply by $mc^2$ to get the units right.
 The action is
 \begin{align}
-	S = -mc^2\int_{\ts x_i}^{\ts x_f} \dd\tau = \int_{t_i}^{t_f} \dd t L
+	S = -mc^2\int_{\ts x_i}^{\ts x_f} \ddτ = \int_{t_i}^{t_f} \dd t L
 \end{align}
 where the Lagrangian is
 \begin{align}
@@ -399,16 +399,16 @@ where the Lagrangian is
 .\end{align}
 Then, the Hamiltonian (total energy) and conjugate momentum are
 \begin{align}
-	E &= \uvec p\cdot\uvec x - L = \gamma mv^2 + \frac{mc^2}{\gamma} = \gamma mc^2
+	E &= \uvec p\cdot\uvec x - L = γ mv^2 + \frac{mc^2}{γ} = γ mc^2
 ,\\	\uvec p &= \pdv{L}{\dot{\uvec x}}
 	= mc^2\frac12\frac{2\dot{\uvec x}}{\sqrt{1 - v^2/c^2}}
-	= \gamma m\uvec v
+	= γ m\uvec v
 ,\end{align}
 matching the definition \eqref{eqn:4-momentum}.
 
 In all rest frames,
 \begin{eqbox}
-	\|\ts p\|^2 = \ts p\cdot\ts p = p^\mu p_\mu = -m^2c^2
+	\|\ts p\|^2 = \ts p\cdot\ts p = p^μ p_μ = -m^2c^2
 \end{eqbox}
 as can be shown by evaluating in the particle's instantaneous rest frame and using scalar invariance.
 
@@ -419,7 +419,7 @@ Photons have no instantaneous rest frame---but we can always find a frame in whi
 \subsection{Angular momentum}
 
 
-The covariant orbital angular momentum of a particle about an event $\ts x_0 = \qty{x_0^\mu}$ is defined as
+The covariant orbital angular momentum of a particle about an event $\ts x_0 = \qty{x_0^μ}$ is defined as
 \begin{align}
 	j^{μν} = (x^μ - x_0^μ)p^ν - (x^ν - x_0^ν)p^μ
 ,\end{align}

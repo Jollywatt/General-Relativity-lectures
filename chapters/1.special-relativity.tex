@@ -353,5 +353,66 @@ By \eqref{eqn:def-proper-time},
 where $v^i \equiv \dv{x^i}{t}$ so
 \begin{align}
 	\dd\tau = \sqrt{1 - \frac{v^2}{c^2}}\dd t \equiv \gamma\dd t
+	\label{eqn:gamma-factor}
 \end{align}
 is the proper time of a frame moving at velocity $\uvec v$ relative to a frame with coordinates $(ct, x^i)$.
+
+
+\subsection{4-velocity}
+
+Since proper time $\dd\tau$ is an \emph{invariant}, we are motivated to define the 4-vector
+\begin{align}
+	u^\mu \equiv \dv{x^\mu}{\tau}
+	= \dv{t}{\tau}\qty(c, \dv{\uvec x}{t})
+	= \gamma(c, \uvec v)
+,\end{align}
+where $\gamma$ is defined as in \eqref{eqn:gamma-factor}.
+In the particle's instantaneous rest frame, $\|\uvec v\|^2 = u^iu_i = 0$, so that $u^\mu u_\mu = u^0u_0 = -c^2$.
+However, since this is an invariant (it is a scalar, which does not transform under Poincaré transformations), we have
+\begin{eqbox}{align}
+	\|\ts u\|^2 \equiv \ts u \cdot \ts u \equiv u^\mu u_\mu = -c^2
+\end{eqbox}
+in \emph{all frames}.
+
+
+\subsection{4-momentum}
+
+Relativistic 4-momentum is defined by
+\begin{align}
+	\ts p \equiv m\ts u &= \qty(\frac{E}{c}, \uvec p)
+,&	E &= \gamma mc^2
+,&	\uvec p &= \gamma m\uvec v
+	\label{eqn:4-momentum}
+.\end{align}
+This form of 4-momentum may be deduced from an action using the Hamiltonian approach.
+We want to extremise \eqref{eqn:def-spacetime-interval}, but first multiply by $mc^2$ to get the units right.
+The action is
+\begin{align}
+	S = -mc^2\int_{x_i}^{x_f} \dd\tau = \int_{t_i}^{t_f} \dd t L
+\end{align}
+where the Lagrangian is
+\begin{align}
+	L = L(\uvec x, \dot{\uvec x}; t)
+	= -mc^2\sqrt{1 - \frac{v^2}{c^2}}
+	= -mc^2\sqrt{1 - \frac{\uvec x \cdot \uvec x}{c^2}}
+.\end{align}
+Then, the Hamiltonian (total energy) and conjugate momentum are
+\begin{align}
+	E &= \uvec p\cdot\uvec x - L = \gamma mv^2 + \frac{mc^2}{\gamma} = \gamma mc^2
+,\\	\uvec p &= \pdv{L}{\dot{\uvec x}}
+	= mc^2\frac12\frac{2\dot{\uvec x}}{\sqrt{1 - v^2/c^2}}
+	= \gamma m\uvec v
+,\end{align}
+matching the definition \eqref{eqn:4-momentum}.
+
+In all rest frames,
+\begin{eqbox}
+	\|\ts p\|^2 = \ts p\cdot\ts p = p^\mu p_\mu = -m^2c^2
+\end{eqbox}
+as can be shown by evaluating in the particle's instantaneous rest frame and using scalar invariance.
+
+For photons with $m = 0$, the 4-momentum $\ts p$ is a null vector.
+Photons have no instantaneous rest frame---but we can always find a frame in which $\ts p = \frac{E}{c}(1, 0, 0, 1)$.
+
+
+\subsection{Angular momentum}

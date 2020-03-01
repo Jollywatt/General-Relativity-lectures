@@ -134,7 +134,7 @@
 \usepackage{environ}
 
 % Environment for boxed equations, use as e.g., `\begin{eqbox}{align}...\end{eqnbox}`
-\NewEnviron{eqbox}[1]{\begin{empheq}[box=\fbox]{#1}\BODY\end{empheq}}
+\NewEnviron{eqbox}[1][align]{\begin{empheq}[box=\fbox]{#1}\BODY\end{empheq}}
 
 % \newenvironment{baligned}{\left\{\begin{aligned}}{\end{\aligned}\right.}
 \NewEnviron{baligned}{\left\{\begin{aligned}\BODY\end{aligned}\right.}

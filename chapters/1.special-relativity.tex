@@ -189,7 +189,7 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 		α = \tanh^{-1}\frac{v}{c}
 	\end{math}
 	is the \textit{rapidity parameter}.
-	In terms of the velocity $\beta \equiv \frac{v}{c}$, one has $\coshα = \frac1{\sqrt{1 - \beta^2}} \equiv γ$ and $\sinhα = \frac{\beta}{\sqrt{1 - \beta^2}} \equiv \betaγ$.
+	In terms of the velocity $β \equiv \frac{v}{c}$, one has $\coshα = \frac1{\sqrt{1 - β^2}} \equiv γ$ and $\sinhα = \frac{β}{\sqrt{1 - β^2}} \equiv βγ$.
 
 	\begin{note}
 	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric.
@@ -199,7 +199,7 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 \end{itemize}
 
 \noindent
-An important difference between rotations and boosts is that, where $0 \le θ < 2π$ for rotations, we have $-\infty < α < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2π)$ is compact, but $\mathbb{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathbb{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
+An important difference between rotations and boosts is that, where $0 \le θ < 2π$ for rotations, we have $-\infty < α < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2π)$ is compact, but $\mathds{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathds{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
 
 Both rotations and boosts depend on continuous parameters ($θ$ or $α$).
 However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformations...
@@ -430,7 +430,7 @@ This is an antisymmetric tensor,
 ,\end{math}
 with 6 independent components: $j^{0k}, j^{k\ell}, k < \ell$.
 \begin{note}[Example]
-	About the origin $x_0^μ = (0,0,0,0)$, we have
+	About the origin $x_0^μ = 0$, we have
 	\begin{math}
 		j^{ij} = x^ip^j - x^jp^i
 	\end{math}
@@ -449,4 +449,24 @@ with 6 independent components: $j^{0k}, j^{k\ell}, k < \ell$.
 
 
 
-\section{Gau\ss's Theorem in Minkowski Spacetime}
+\section{Gauß's Theorem in Minkowski Spacetime}
+
+In three dimensional Euclidean space, Gauß's theorem is
+\begin{align}
+	\int_R \dd^3x \, \nabla \cdot \uvec V = \oint_{\partial R} \dd \uvec S \cdot \uvec V
+,\end{align}
+where $\uvec V$ is a 3-vector and $R \subset \mathds{R}^3$ is a region of Euclidean space with boundary $\partial R$.
+The surface element $\dd\uvec S$ is normal to the boundary $\partial R$.
+In index form,
+\begin{align}
+	\int_R\dd^3x \, \partial_iV^{i...} = \oint_{\partial R} \dd S_i V^{i...}
+,\end{align}
+where dots denote possible free indices, which are not involved.
+The proof of Gauß's theorem does not require 3 dimensions or a $+++$ metric signature.
+In Minkowski spacetime $\Mink^4$, Gauß's theorem reads
+\begin{align}
+	\int_R\dd^4x \, \partial_μ V^{μ...} = \oint_{\partial R} \dd Σ_μV^{μ...}
+,\end{align}
+where $\partial R$ is now the boundary of a simply-connection region $R \subset \Mink^4$ with normal surface element $\dd\tsΣ$.
+
+

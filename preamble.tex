@@ -121,19 +121,25 @@
 % Notes to editor(s)
 \newcommand{\alert}[1]{\ifdraft\textcolor{red}{\textbf{\underline{#1}}}\else\fi}
 
+% Replace equation number label with little right-aligned little note
+\newcommand{\eqnote}[1]{\tag*{\small\emph{#1}}}
+
+
 
 
 %% MATHS
-\usepackage{amssymb}
+\usepackage{unicode-math}
+\usepackage{amsmath}
+\usepackage{accents}
+% \usepackage{amssymb}
 \usepackage{mathtools} % provides: \Aboxed
 \usepackage{physics}
-\usepackage{accents}
 \usepackage{dsfont}
 
 \usepackage{empheq}
 \usepackage{environ}
 
-% Environment for boxed equations, use as e.g., `\begin{eqbox}{align}...\end{eqnbox}`
+% Environment for boxed equations, use as e.g., `\begin{eqbox}[align]...\end{eqnbox}`
 \NewEnviron{eqbox}[1][align]{\begin{empheq}[box=\fbox]{#1}\BODY\end{empheq}}
 
 % \newenvironment{baligned}{\left\{\begin{aligned}}{\end{\aligned}\right.}
@@ -141,8 +147,6 @@
 
 \input{symbols}
 
-% Replace equation number label with right-aligned little note
-\newcommand{\eqnote}[1]{\tag*{\small\emph{#1}}}
 
 
 

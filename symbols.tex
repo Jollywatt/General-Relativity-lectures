@@ -1,13 +1,14 @@
 %% SYMBOL MACROS
 
 % David's tensor 'twiddle'
-% \newcommand{\ts}[1]{\underset{\raisebox{0.4ex}{$\scriptstyle\sim$}}{#1}}
 \newcommand{\ts}[1]{\underaccent{\sim}{\boldsymbol{#1}}}
+% \newcommand{\ts}{}
 
 \newcommand{\bs}{\boldsymbol}
 
 % Vector under-bar
-\newcommand\uvec[1]{\underaccent{\vec}{#1}}
+% \newcommand{\uvec}[1]{\underaccent{\rightharpoondown}{#1}}
+\newcommand{\uvec}{\vec}
 
 % Minkowski space
 \newcommand{\Mink}{\mathcal M}
@@ -19,3 +20,6 @@
 \renewcommand{\O}{\mathrm{O}}
 \newcommand{\SO}{\mathrm{SO}}
 \newcommand{\ISO}{\mathrm{ISO}}
+
+% Levi--Civita symbol
+\newcommand{\leviciv}{\epsilon}

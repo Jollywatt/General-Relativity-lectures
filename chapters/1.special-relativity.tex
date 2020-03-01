@@ -9,7 +9,8 @@ Assumptions of Special Relativity:
 \begin{enumerate}
 	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^\mu$,
 	\begin{align}
-		x^\mu \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
+		% x^\mu \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
+		\uvec{ x}
 	.\end{align}
 	\begin{note}[Notation]
 	Greek indices, $\mu,\nu$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
@@ -100,7 +101,7 @@ Now,
 	\eqnote{...since true $\forall u^\alpha$}
 .\end{align}
 So the required transformation between inertial frames is \textit{linear};
-\begin{eqbox}{align}
+\begin{eqbox}
 	x^{\bar\mu} = L^{\bar\mu}{}_\nu x^\nu + a^{\bar\mu}
 	\label{eqn:Poincare-coord-transform}
 ,\end{eqbox}
@@ -111,13 +112,13 @@ Differentiate \eqref{eqn:Poincare-coord-transform} and substitute into \eqref{eq
 	= \eta_{\bar\mu\bar\nu}L^{\bar\mu}{}_\mu L^{\bar\nu}{}_\nu\dd x^\mu\dd x^\nu
 .\end{math}
 Since this is true $\forall \, \dd x^\mu$,
-\begin{eqbox}{align}
+\begin{eqbox}
 	\eta_{\bar\mu\bar\nu}L^{\bar\mu}{}_\mu L^{\bar\nu}{}_\nu
 	= \eta_{\mu\nu}
 	\label{eqn:Lorentz-matrix-condition}
 .\end{eqbox}
 In matrix form, \eqref{eqn:Poincare-coord-transform} and \eqref{eqn:Lorentz-matrix-condition} are
-\begin{eqbox}{gather}
+\begin{eqbox}[gather]
 	\ts{\bar x} = L\ts{x} + \ts{a} \tag{\ref{eqn:Poincare-coord-transform}a}
 ,\\  L\transpose \eta L = \eta \tag{\ref{eqn:Lorentz-matrix-condition}a}
 .\end{eqbox}
@@ -369,7 +370,7 @@ Since proper time $\dd\tau$ is an \emph{invariant}, we are motivated to define t
 where $\gamma$ is defined as in \eqref{eqn:gamma-factor}.
 In the particle's instantaneous rest frame, $\|\uvec v\|^2 = u^iu_i = 0$, so that $u^\mu u_\mu = u^0u_0 = -c^2$.
 However, since this is an invariant (it is a scalar, which does not transform under Poincaré transformations), we have
-\begin{eqbox}{align}
+\begin{eqbox}
 	\|\ts u\|^2 \equiv \ts u \cdot \ts u \equiv u^\mu u_\mu = -c^2
 \end{eqbox}
 in \emph{all frames}.
@@ -388,7 +389,7 @@ This form of 4-momentum may be deduced from an action using the Hamiltonian appr
 We want to extremise \eqref{eqn:def-spacetime-interval}, but first multiply by $mc^2$ to get the units right.
 The action is
 \begin{align}
-	S = -mc^2\int_{x_i}^{x_f} \dd\tau = \int_{t_i}^{t_f} \dd t L
+	S = -mc^2\int_{\ts x_i}^{\ts x_f} \dd\tau = \int_{t_i}^{t_f} \dd t L
 \end{align}
 where the Lagrangian is
 \begin{align}
@@ -416,3 +417,36 @@ Photons have no instantaneous rest frame---but we can always find a frame in whi
 
 
 \subsection{Angular momentum}
+
+
+The covariant orbital angular momentum of a particle about an event $\ts x_0 = \qty{x_0^\mu}$ is defined as
+\begin{align}
+	j^{μν} = (x^μ - x_0^μ)p^ν - (x^ν - x_0^ν)p^μ
+,\end{align}
+where $x^μ$ and $p^μ$ are the particle's position and momentum.
+This is an antisymmetric tensor,
+\begin{math}
+	j^{μν} = -j^{νμ} = j^{[μν]}
+,\end{math}
+with 6 independent components: $j^{0k}, j^{k\ell}, k < \ell$.
+\begin{note}[Example]
+	About the origin $x_0^μ = (0,0,0,0)$, we have
+	\begin{math}
+		j^{ij} = x^ip^j - x^jp^i
+	\end{math}
+	which is equivalent to $j^{ij} = \leviciv^{ijk}\ell_k$ where $\uvec l = \uvec x \times \uvec p$.
+	% $\uvec l$ is a vector, whereas $j^
+	\alert{which is a vector, pseudovector, bivector?}
+	$j^{0k}$ represents the motion of the centre of mass:
+	\begin{math}
+		j^{0k} = x^0p^k - x^kp^0 = γmc(v^kt - x^k)
+	.\end{math}
+\end{note}
+
+
+
+
+
+
+
+\section{Gau\ss's Theorem in Minkowski Spacetime}

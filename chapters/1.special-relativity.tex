@@ -64,11 +64,11 @@ Using the two postulates, one may show that the interval $\dd s^2$ is invariant 
 
 \begin{note}
 \begin{itemize}%[label=\arabic*)]
-	\item The symbol $\dd s^2$ for the interval is purely notational convention, since we may have $\dd s^2 < 0$ is some cases.
+	\item The symbol $\dd s^2$ for the interval is purely notational convention (it is not the square of `$\dd s$') since we may have $\dd s^2 < 0$ is some cases.
 
 	\item The first postulate alone implies either S.R.\ or its $c \to \infty$ limit (a.k.a.\ Galilean relativity).
 
-	\item Formally, $\dd x^μ\dd x^ν$ is shorthand for the \textit{tensor product} $\dd x^μ \otimes \dd x^ν$, and you will see that $\dd s^2 = \tsη$ is really the \emph{metric tensor}...
+	\item Formally, $\dd x^μ\dd x^ν$ is shorthand for the \textit{tensor product} $\dd x^μ \otimes \dd x^ν$, and you will see that $\dd s^2 \equiv \tsη$ is really the \emph{metric tensor}...
 \end{itemize}
 \end{note}
 
@@ -191,16 +191,16 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 	In terms of the velocity $β \equiv \frac{v}{c}$, one has $\coshα = \frac1{\sqrt{1 - β^2}} \equiv γ$ and $\sinhα = \frac{β}{\sqrt{1 - β^2}} \equiv βγ$.
 
 	\begin{note}
-	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric: they are \emph{hyperbolic}.
-	E.g., consider a vector space with signature $(-+)$; a `rotation' which preserves the inner product has the same form of the $tx$-submatrix in $L_B(α)$.
+	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric: they are \emph{hyperbolic rotations}.
+	E.g., consider a vector space with signature $(-+)$; a `rotation' which preserves the inner product $(\smqty[a\\b], \smqty[c\\d]) \mapsto -ac + bd$ has the same form as the $tx$-submatrix of $L_B(α)$.
 
-	Formally, an $x$-boost of rapidity $α$ is equivalent to a rotation by an `imaginary angle' $α' = iα$ through the $τx$-plane, where $τ = it$ is `imaginary time'... though this is not a good picture physically!
+	Formally, an $x$-boost of rapidity $α$ is equivalent to a rotation by an `imaginary angle' $α' = iα$ through the $τx$-plane, where $τ = it$ is `imaginary time'... though this is not a useful picture physically!
 	\end{note}
 
 \end{itemize}
 
 \noindent
-An important difference between rotations and boosts is that, where $0 \le θ < 2π$ for rotations, we have $-\infty < α < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2π)$ is compact, but $\mathds{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathds{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
+An important difference between rotations and boosts is that, whereas $0 \le θ < 2π$ for rotations, we have $-\infty < α < \infty$ for boosts, i.e., rotations form a \textit{compact}\footnote{A \textit{compact} set is one for which any infinite sequence of elements contains a convergent subsequence. E.g., $[0, 2π)$ is compact, but $\mathds{R}$ is not (consider the sequence $\qty{1, 2, 3, ...} \subset \mathds{R}$).} subgroup of the Lorentz (or Poincaré) group, whereas boosts are \textit{non-compact}---and in fact do not form a subgroup (because, in general, the composition of two boosts forms a combination of a rotation and a boost).
 
 Both rotations and boosts depend on continuous parameters ($θ$ or $α$).
 However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformations...
@@ -219,7 +219,7 @@ However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformatio
 
 	\begin{note}
 	In even spatial dimensions, the transformation $R = \operatorname{diag}(1, -\mathds{1}_{2n})$ is \textit{not} a parity transformation; it is a rotation by $π$ and has $\det R = 1$.
-	In these cases, inversions $x_i \mapsto -x_i$ of a \textit{single} spatial coordinate are each parity transformations.
+	In all dimensions, inversions $x_i \mapsto -x_i$ of a \textit{single} spatial coordinate are each parity transformations.
 	\end{note}
 
 	\item \textbf{Time reversal};
@@ -328,7 +328,7 @@ The \textbf{proper time interval} $\ddτ$ between two neighbouring events along 
 \end{align}
 
 \begin{note}
-	Since $\dd x$ is timelike, $η_{μν}\dd x^μ\dd x^ν < 0$, so \eqref{eqn:def-proper-time} contains a minus sign.
+	Since $\dd\ts x$ is timelike, $η_{μν}\dd x^μ\dd x^ν < 0$, so \eqref{eqn:def-proper-time} contains a minus sign.
 	Proper time is not defined for spacelike intervals, since this would yield an imaginary time.
 	Instead, proper distance is defined by $\dd\ell^2 = η_{μν}\dd x^μ\dd x^ν$.
 \end{note}

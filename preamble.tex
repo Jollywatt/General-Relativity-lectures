@@ -1,5 +1,5 @@
 \documentclass{report}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 
 \newif\ifdraft % whether to show guides, annotations, etc
 \draftfalse
@@ -128,10 +128,9 @@
 
 
 %% MATHS
-\usepackage{amsmath}
+\usepackage{mathtools} % provides: \Aboxed, loads amsmath
 \usepackage[math-style=ISO]{unicode-math} % must go after amsmath
 \usepackage{accents}
-\usepackage{mathtools} % provides: \Aboxed
 \usepackage{physics}
 \usepackage{dsfont}
 
@@ -143,6 +142,9 @@
 
 % \newenvironment{baligned}{\left\{\begin{aligned}}{\end{\aligned}\right.}
 \NewEnviron{baligned}{\left\{\begin{aligned}\BODY\end{aligned}\right.}
+
+\removenolimits{\int} % unicode-math breaks [intlimits]{amsmath}
+\removenolimits{\oint} % unicode-math breaks [intlimits]{amsmath}
 
 \input{symbols}
 

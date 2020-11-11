@@ -9,8 +9,7 @@ Assumptions of Special Relativity:
 \begin{enumerate}
 	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^μ$,
 	\begin{align}
-		% x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
-		\uvec{ x}
+		x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
 	.\end{align}
 	\begin{note}[Notation]
 	Greek indices, $μ, ν$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
@@ -26,7 +25,7 @@ Assumptions of Special Relativity:
 Postulates of Special Relativity:
 \begin{enumerate}
 	\item \textsc{Principle of Relativity:}
-	The laws of physics are invariant under transformations $x^ν \to x^{\barμ}(x^ν)$ from one inertial frame to another (and such transformations form a group).
+	The laws of physics are invariant under transformations $x^ν \to x^{\bar μ}(x^ν)$ from one inertial frame to another (and such transformations form a group).
 	
 	\item \textsc{Constancy of the Speed of Light:} There exists an invariant upper bound on all velocities
 	\begin{align}
@@ -59,7 +58,7 @@ This suggests the definition of the \textbf{spacetime interval} between any neig
 For photons, $\dd s^2 = 0$.
 Using the two postulates, one may show that the interval $\dd s^2$ is invariant with respect to coordinates based in any inertial frame \cite[\S1.6]{schutz2009first}.
 \begin{align}
-	\dd s^2 =η{μν}\dd x^μ \dd x^ν = η_{\barμ\barν}\dd x^{\barμ} \dd x^{\barν}
+	\dd s^2 =η_{μν}\dd x^μ \dd x^ν = η_{\bar μ\bar ν}\dd x^{\bar μ} \dd x^{\bar ν}
 	\label{eqn:def-spacetime-interval}
 .\end{align}
 
@@ -85,35 +84,35 @@ In an inertial frame $K$, the equations of motion of a free particle are linear;
 where $x_0^μ, u^μ$ are constant and $λ$ is a parameter.
 Similarly, in any other inertial frame $\bar K$,
 \begin{align}
-	\dv[2]{x^{\barμ}}{λ} &= 0
+	\dv[2]{x^{\bar μ}}{λ} &= 0
 &   &\iff
-&   x^{\barμ} &= x_0^{\barμ} + u^{\barμ}λ
+&   x^{\bar μ} &= x_0^{\bar μ} + u^{\bar μ}λ
 .\end{align}
 Now,
 \begin{align}
-	\dv{x^{\barμ}}{λ} &= \pdv{x^{\barμ}}{x^ν}\dv{x^ν}{λ} = \pdv{x^{\barμ}}{x^ν}u^ν
+	\dv{x^{\bar μ}}{λ} &= \pdv{x^{\bar μ}}{x^ν}\dv{x^ν}{λ} = \pdv{x^{\bar μ}}{x^ν}u^ν
 	\eqnote{...chain rule}
 \\\implies
-	0 &= \dv[2]{x^{\barμ}}{λ} = \pdv{x^α}\qty(\pdv{x^{\barμ}}{x^ν}u^ν)u^α
-	= \pdv[2]{x^{\barμ}}{x^α}{x^ν}u^ν u^α
+	0 &= \dv[2]{x^{\bar μ}}{λ} = \pdv{x^α}\qty(\pdv{x^{\bar μ}}{x^ν}u^ν)u^α
+	= \pdv[2]{x^{\bar μ}}{x^α}{x^ν}u^ν u^α
 	\eqnote{$\because \; u^ν$ constant}
-\\\implies 0 &= \pdv[2]{x^{\barμ}}{x^α}{x^ν}
+\\\implies 0 &= \pdv[2]{x^{\bar μ}}{x^α}{x^ν}
 	\eqnote{...since true $\forall u^α$}
 .\end{align}
 So the required transformation between inertial frames is \textit{linear};
 \begin{eqbox}
-	x^{\barμ} = L^{\barμ}{}_ν x^ν + a^{\barμ}
+	x^{\bar μ} = L^{\bar μ}{}_ν x^ν + a^{\bar μ}
 	\label{eqn:Poincare-coord-transform}
 ,\end{eqbox}
-where $a^{\barμ}$ and $L^{\barμ}{}_ν \equiv \pdv{x^{\barμ}}{x^nu}$ are constants.
+where $a^{\bar μ}$ and $L^{\bar μ}{}_ν \equiv \pdv{x^{\bar μ}}{x^nu}$ are constants.
 Differentiate \eqref{eqn:Poincare-coord-transform} and substitute into \eqref{eqn:def-spacetime-interval} to give
 \begin{math}
 	η_{μν}\dd x^μ\dd x^ν
-	= η_{\barμ\barν}L^{\barμ}{}_μ L^{\barν}{}_ν\dd x^μ\dd x^ν
+	= η_{\bar μ\bar ν}L^{\bar μ}{}_μ L^{\bar ν}{}_ν\dd x^μ\dd x^ν
 .\end{math}
 Since this is true $\forall \, \dd x^μ$,
 \begin{eqbox}
-	η_{\barμ\barν}L^{\barμ}{}_μ L^{\barν}{}_ν
+	η_{\bar μ\bar ν}L^{\bar μ}{}_μ L^{\bar ν}{}_ν
 	= η_{μν}
 	\label{eqn:Lorentz-matrix-condition}
 .\end{eqbox}
@@ -134,13 +133,13 @@ Transformations $\ts x \mapsto \ts{\bar x}$ defined by \eqref{eqn:Poincare-coord
 
 ``Inhomogeneous'' refers to the inclusion of spacetime translations
 \begin{math}
-	x^ν \mapsto x^{\barμ} = δ^{\barμ}{}_ν x^ν + a^{\barμ}
+	x^ν \mapsto x^{\bar μ} = δ^{\bar μ}{}_ν x^ν + a^{\bar μ}
 ,\end{math}
 which form a subgroup $\mathrm{T}^4$ of the Poincaré group.
-If we set $a^{\barμ} = 0$ in \eqref{eqn:Poincare-coord-transform}, we are left with \textit{homogeneous} transformations, called simply the \textbf{Lorentz transformations}.
+If we set $a^{\bar μ} = 0$ in \eqref{eqn:Poincare-coord-transform}, we are left with \textit{homogeneous} transformations, called simply the \textbf{Lorentz transformations}.
 
 
-In G.R., our task is to generalise these ideas to general coordinate frames for which $L^{\barμ}{}_ν$ are not necessarily constant.
+In G.R., our task is to generalise these ideas to general coordinate frames for which $L^{\bar μ}{}_ν$ are not necessarily constant.
 
 
 \subsection{Examples of Lorentz Transformations}
@@ -192,7 +191,9 @@ The Lorentz group $\O(1,3)$ consists of (combinations of) the following:
 	In terms of the velocity $β \equiv \frac{v}{c}$, one has $\coshα = \frac1{\sqrt{1 - β^2}} \equiv γ$ and $\sinhα = \frac{β}{\sqrt{1 - β^2}} \equiv βγ$.
 
 	\begin{note}
-	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric.
+	Boosts appear similar to rotations, but differ as a consequence of the indefiniteness of the metric: they are \emph{hyperbolic}.
+	E.g., consider a vector space with signature $(-+)$; a `rotation' which preserves the inner product has the same form of the $tx$-submatrix in $L_B(α)$.
+
 	Formally, an $x$-boost of rapidity $α$ is equivalent to a rotation by an `imaginary angle' $α' = iα$ through the $τx$-plane, where $τ = it$ is `imaginary time'... though this is not a good picture physically!
 	\end{note}
 
@@ -217,8 +218,8 @@ However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformatio
 	Notice that $P$ is \textit{not} equivalent to a rotation; it transforms a right-handed frame into a left and vice versa, since $\det P = -1$.
 
 	\begin{note}
-	In even spatial dimensions, the transformation $R = \operatorname{diag}(1, -\mathds{1}_{2n})$ is \textit{not} a parity transformation; it is a rotation by $π$ and $\det R = 1$.
-	In these cases, inversions $x_i \mapsto -x_i$ of a \textit{single} spatial coordinate are parity transformations.
+	In even spatial dimensions, the transformation $R = \operatorname{diag}(1, -\mathds{1}_{2n})$ is \textit{not} a parity transformation; it is a rotation by $π$ and has $\det R = 1$.
+	In these cases, inversions $x_i \mapsto -x_i$ of a \textit{single} spatial coordinate are each parity transformations.
 	\end{note}
 
 	\item \textbf{Time reversal};
@@ -228,9 +229,9 @@ However, the Lorentz group $\O(1,3)$ also contains \emph{discrete} transformatio
 \end{itemize}
 
 The Lorentz matrix condition \eqref{eqn:Lorentz-matrix-condition} implies that $(\det L)^2 = 1 \iff \det L = \pm 1$ for any Lorentz transformation $L \in \O(1,3)$.
-Those with $\det L = +1$ and those with $\det L = -1$ form two disconnected pieces of $\O(1,3)$, but only the first piece contains the identity transformation $δ^{\barμ}{}_ν$.
+Those with $\det L = +1$ and those with $\det L = -1$ form two disconnected pieces of $\O(1,3)$, but only the first piece contains the identity transformation $δ^{\bar μ}{}_ν$.
 
-Inspecting the $\barμν = \bar00$ component of \eqref{eqn:Lorentz-matrix-condition} gives
+Inspecting the $\bar μν = \bar00$ component of \eqref{eqn:Lorentz-matrix-condition} gives
 \begin{align}
 	\qty(L^{\bar0}{}_0)^2 - \sum_{\bar k = 1}^3\qty(L^{\bar k}{}_0)^2 = 1
 	\implies
@@ -275,7 +276,7 @@ Unrestricted groups may be reconstructed by reintroducing the discrete transform
 \section{The Scalar Product in Minkowski Spacetime}
 
 
-
+If $\ts x = x^μ \ts e_μ$ and $\ts y = y^μ \ts e_μ$ are 4-vectors
 
 
 
@@ -319,7 +320,7 @@ A particle's \textbf{worldline} is a curve $x^μ = x^μ(λ)$ whose tangent $\ts 
 This implies that, in an inertial frame, the particles velocity $\uvec v$ is subluminal $|\uvec v| < c$ \exercise.
 
 Consider a freely moving particle whose (timelike) worldline unit tangent vector is $\ts V$.
-There always exists a Lorentz transformation which sends a timelike unit vector to $V^μ \mapsto V^{\barμ} = (1, 0, 0, 0)$ \exercise.
+There always exists a Lorentz transformation which sends a timelike unit vector to $V^μ \mapsto V^{\bar μ} = (1, 0, 0, 0)$ \exercise.
 The \textbf{proper time interval} $\ddτ$ between two neighbouring events along the particle's worldline is defined as the interval of time measured in the particle's instantaneous rest frame.
 \begin{align}
 	c^2\ddτ^2 = -η_{μν}\dd x^μ\dd x^ν
@@ -470,3 +471,25 @@ In Minkowski spacetime $\Mink^4$, Gauß's theorem reads
 where $\partial R$ is now the boundary of a simply-connection region $R \subset \Mink^4$ with normal surface element $\dd\tsΣ$.
 
 
+In 4-dimensional spacetime, we often choose the boundary $\partial R$ so that it has three parts: $Σ^+$, spacelike surface toward future; $Σ^-$, spacelike surface toward past; $\partial R^\infty$, timelike surface at spatial infinity, joining $Σ^+$ and $Σ^-$.
+\begin{note}
+	The outward normal to $Σ^-$ is \emph{past-pointing}.
+\end{note}
+This decomposition is convenient if the fields involved vanish at spatial infinity, in which case the contribution from $\partial R^\infty$ vanishes.
+
+\section{Conserved Currents}
+
+A 4-vector field $\ts J = J^μ\partial_μ$ which is divergence free
+\begin{align}
+	\operatorname{div}\ts J \equiv \pdv{J^μ}{x^μ} \equiv \partial_μ J^μ \equiv J^μ{}_{,μ} = 0
+	\label{eqn:divergenceless}
+\end{align}
+is called a \textbf{4-current}. Equation \eqref{eqn:divergenceless} is a conservation law.
+By Gauß's theorem, supposing that contributions at spatial infinity vanish,
+\begin{align}
+	0 = \int_R \dd^4 x \, \partial_μ J^μ = \int_{Σ^-} \dd Σ_μ J^μ + \int_{Σ^+} \dd Σ_μ J^μ 
+.\end{align}
+If we define $Σ_f \coloneqq Σ^+$ and $Σ_p$ to be $Σ^-$ but future-pointing instead of past-pointing, i.e., $\int_{Σ_p}\dd Σ_μ J^μ = -\int_{Σ_-}\dd Σ_μ J^μ$, then the equation above becomes
+\begin{align}
+	\int_{Σ_p}\dd Σ_μ J^μ = \int_{Σ_f}\dd Σ_μ J^μ = \int_{t\ \const}\dd^3 x\,J^0
+\end{align}

@@ -9,8 +9,7 @@ Assumptions of Special Relativity:
 \begin{enumerate}
 	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^μ$,
 	\begin{align}
-		% x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \qty(ct, \uvec x)
-		\uvec{ x}
+		x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \underset{\text{time, space}}{\qty(ct, \uvec x)}
 	.\end{align}
 	\begin{note}[Notation]
 	Greek indices, $μ, ν$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
@@ -59,7 +58,7 @@ This suggests the definition of the \textbf{spacetime interval} between any neig
 For photons, $\dd s^2 = 0$.
 Using the two postulates, one may show that the interval $\dd s^2$ is invariant with respect to coordinates based in any inertial frame \cite[\S1.6]{schutz2009first}.
 \begin{align}
-	\dd s^2 =η{μν}\dd x^μ \dd x^ν = η_{\barμ\barν}\dd x^{\barμ} \dd x^{\barν}
+	\dd s^2 =η_{μν}\dd x^μ \dd x^ν = η_{\barμ\barν}\dd x^{\barμ} \dd x^{\barν}
 	\label{eqn:def-spacetime-interval}
 .\end{align}
 
@@ -274,9 +273,52 @@ Unrestricted groups may be reconstructed by reintroducing the discrete transform
 
 \section{The Scalar Product in Minkowski Spacetime}
 
+We define a scalar product
+\begin{align}
+    \dd s^2 = \eta_{\mu\nu} \dd x^\mu \dd x^\nu = \dd x_\mu \dd x^\mu \equiv \ts{\dd x} \cdot \ts{\dd x},
+\end{align}
+where 
+\begin{align}
+    \dd x_\mu = \eta_{\mu\nu} \dd x^\nu = \qty(- \dd x^0, \dd x^1, \dd x^2, \dd x^3 ) \label{eqn:dx-lowered}
+\end{align}
+is the dual component form.
 
+We refer to $\qty{\dd x^\mu}$ as the \textit{contravariant} components, and $\qty{\dd x_\mu}$ as the \textit{covariant} components of the vector $\ts{ \dd x}$.
+Thus the metric $\eta_{\mu\nu}$ acts as an \textit{index-lowering operator}\footnote{N.B. $\qty{ \dd x_\mu }$ are \textit{not} differentials of coordinates.}.
 
+The identity operation (a Lorentz transformation of course) is the Kronecker delta $\delta^\mu{}_\nu$ in indexed form.
 
+Thus $\delta^\mu{}_\nu = \qty(\eta^{-1} \eta)^\mu{}_\nu = \qty(\eta^{-1})^{\mu\lambda} \eta_{\lambda\nu}$ by applying the rule that the indices of $\eta$ are downstairs.
+As a matrix, $\eta^{-1} = \eta = \operatorname{diag}\qty(-1, \mathds{1}),$
+but we write $\eta^{-1} = \qty(\eta^{-1})^{\mu\lambda} = \eta^{\mu\lambda}$ (with indices raised) so that levels of indices are consistent, i.e.
+\begin{align}
+    \eta^{\mu\lambda} \eta_{\lambda \nu} = \delta^\mu{}_\nu.
+    \label{eqn:metric-inverse}
+\end{align}
+By \eqref{eqn:dx-lowered} and \eqref{eqn:metric-inverse} if follows that
+\begin{align}
+    \dd x^\mu = \eta^{\mu\lambda} \dd x_\lambda, 
+    \label{eqn:eta-raising}
+\end{align}
+i.e. $\eta^{\mu\lambda}$ is an index-raising operator.
+
+Under a Poincar\'e transformation $x^\mu \to x^{\bar \mu} \qty(x^\mu)$
+\begin{align}
+    &\dd x^{\bar \mu} = L^{\bar \mu}{}_\mu \dd x^\mu, &\text{where } L^{\bar \mu}{}_\mu = \pdv{x^{\bar \mu}}{x^\mu} \in O(1,3).
+    \label{eqn:poincare-transformation}
+\end{align}
+The inverse transformation taking $x^{\bar \mu}$ back to $x^\mu$ just swaps indices $\bar \mu \leftrightarrow \mu$ in above. 
+Thus the natural notation for the Lorentz matrix inverse to $L^{\bar \mu}{}_\mu$ is $\qty(L^{-1})^\mu{}_{\bar \mu} \equiv L^\mu{}_{\bar \mu} = \pdv{x^\mu}{x^{\bar \mu}}$.
+By the chain rule:
+\begin{align}
+    &L^{\bar \mu}{}_\mu L^\mu{}_{\bar \nu} = \delta^{\bar \mu}{}_{\bar \nu}, &L^\mu{}_{\bar \mu} L^{\bar \mu}{}_\nu = \delta^\mu{}_\nu.
+\label{eqn:lorentz-chainrule}
+\end{align}
+From \eqref{eqn:dx-lowered}, \eqref{eqn:poincare-transformation}, and (\ref{eqn:Lorentz-matrix-condition}a) it follows that \exercise under \eqref{eqn:poincare-transformation}
+\begin{align}
+    \dd x_{\bar \mu} = L^\mu{}_{\bar \mu} \dd x_\mu.
+    \label{eqn:dx-lowered-lorentz}
+\end{align}
 
 
 \section{The Causal Structure of Minkowski Spacetime}

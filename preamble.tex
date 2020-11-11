@@ -115,8 +115,9 @@
 
 % Exercise label with checkbox
 \usepackage{marginnote}
+\usepackage{xspace}
 \newcommand{\checkbox}{\fboxsep=-.15pt\fbox{\rule{0pt}{1.6ex}\rule{1.6ex}{0pt}}}
-\newcommand{\exercise}{\emph{(exercise)}\marginnote{\checkbox}}
+\newcommand{\exercise}{\emph{(exercise)}\xspace\marginnote{\checkbox}}
 
 % Notes to editor(s)
 \newcommand{\alert}[1]{\ifdraft\textcolor{red}{\textbf{\underline{#1}}}\else\fi}

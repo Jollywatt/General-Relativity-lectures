@@ -306,7 +306,7 @@ i.e. $\eta^{\mu\lambda}$ is an index-raising operator.
 
 Under a Poincar\'e transformation $x^\mu \to x^{\bar \mu} \qty(x^\mu)$
 \begin{align}
-    &\dd x^{\bar \mu} = L^{\bar \mu}{}_\mu \dd x^\mu, &\text{where } L^{\bar \mu}{}_\mu = \pdv{x^{\bar \mu}}{x^\mu} \in O(1,3).
+    &\dd x^{\bar \mu} = L^{\bar \mu}{}_\mu \dd x^\mu, &\text{where } L^{\bar \mu}{}_\mu = \pdv{x^{\bar \mu}}{x^\mu} \in \O(1,3).
     \label{eqn:poincare-transformation}
 \end{align}
 The inverse transformation taking $x^{\bar \mu}$ back to $x^\mu$ just swaps indices $\bar \mu \leftrightarrow \mu$ in above. 
@@ -327,12 +327,53 @@ From \eqref{eqn:dx-lowered}, \eqref{eqn:poincare-transformation}, and (\ref{eqn:
 We define relativistic fields by their tranformation properties under \textit{restricted} Poincar\'e (or Lorentz) tranformations.
 Suppose
 \begin{align}
-	&x^\mu \to x^{\bar \mu} = \Lambda^{\bar \mu}{}_\mu x^\mu + a^{\bar \mu}, &\Lambda^{\bar \mu}{}_\mu = \pdv{x^{\bar \mu}}{x^\mu} \in SO(1,3) 
+	&x^\mu \to x^{\bar \mu} = \Lambda^{\bar \mu}{}_\mu x^\mu + a^{\bar \mu}, &\Lambda^{\bar \mu}{}_\mu = \pdv{x^{\bar \mu}}{x^\mu} \in \SO(1,3).
 	\label{eqn:rel-field-transformation}
 \end{align}
 
-\subsection
+\subsection{Scalar field}
+A single function of $x^\mu$ which is Lorentz (or Poincar\'e) invariant,
+\begin{align}
+	\phi (\ts x) \to \bar \phi ( \ts{\bar x}) = \phi (\ts x)
+	\label{eqn:scalar-invariance}
+\end{align}
+e.g.
+\begin{align}
+	&\ts x \to \ts {\bar x} = \ts x + \ts a &&\implies \bar{\phi} (\ts x + \ts a) = \phi (\ts x) \quad\text{ or } &&\bar{\phi}(\ts x) = \phi(\ts x - \ts a), \\
+	&\ts x \to \ts {\bar x} = \Lambda \ts x &&\implies &&\bar{\phi}(\ts x) = \phi(\Lambda^{-1} \ts x).
+\end{align}
 
+\subsection{4-vector field}
+A quantity $\ts V$ with 4 components labelled $V^\mu$ or $V_\mu$ such that $V_\mu = \eta_{\mu\nu} V^\nu$, $V^\mu = \eta^{\mu\nu} V_\nu$, where \textit{contravariant} components transform as
+\begin{align}
+	V^{\bar \mu}  = \Lambda^{\bar \mu}{}_\mu V^\mu,
+	\label{eqn:contravariant-vector-tranformation}
+\end{align}
+e.g.
+\begin{align}
+	\ts x \to \ts {\bar x} = \Lambda \ts x \implies V^{\bar \mu} \qty( \Lambda \ts x ) = \Lambda^{\bar \mu}{}_\mu V^\mu(\ts x),
+\end{align}
+or
+\begin{align}
+	V^{\bar \mu}(\ts x) = \Lambda^{\bar \mu}{}_\mu V^\mu \qty( \Lambda^{-1} \ts x),
+\end{align}
+and \textit{covariant} components transform as
+\begin{align}
+	V_{\bar \mu} = \Lambda^\mu{}_{\bar \mu} V_\mu,
+	\label{eqn:covariant-vector-tranformation}
+\end{align}
+e.g.
+\begin{align}
+	\partial_{\bar \mu} = \Lambda^\mu{}_{\bar \mu} \partial_\mu .
+\end{align}
+
+\subsection{4-tensors}
+A rank $n$ tensor is an object with $4^n$ components, transforming as
+\begin{align}
+	T^{\bar{\mu}\bar{\nu} \cdots}{}_{\bar{\lambda} \cdots} = \Lambda^{\bar \mu}{}_\mu \Lambda^{\bar \nu}{}_\nu \cdots \Lambda^{\lambda}{}_{\bar{\lambda}} \cdots T^{\mu\nu \cdots}{}_{\lambda \cdots}
+	\label{eqn:tensor-transformation}
+\end{align}
+and indices are raised and lowered by Minkowski metric $\eta_{\mu\nu}$.
 
 \section{The Causal Structure of Minkowski Spacetime}
 

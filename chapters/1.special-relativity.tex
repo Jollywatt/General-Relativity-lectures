@@ -9,7 +9,7 @@ Assumptions of Special Relativity:
 \begin{enumerate}
 	\item The world is described by a 4-dimensional continuum\footnote{Mathematically, a \emph{Lorentzian manifold}...}, \textbf{spacetime}, or \textbf{Minkowski space} $\Mink^4$, which is the set of all \textbf{events} $x^μ$,
 	\begin{align}
-		x^μ \equiv \ts x = \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) = \underset{\text{time, space}}{\qty(ct, \uvec x)}
+		x^μ \equiv \ts x \equiv \qty(x^0, x^i) \equiv \qty(x^0, \uvec x) \equiv \underset{\text{time, space}}{\qty(ct, \uvec x)}
 	.\end{align}
 	\begin{note}[Notation]
 	Greek indices, $μ, ν$ run over \textit{spacetime} index values; $\qty{0,1,2,3}$. \\
@@ -585,4 +585,29 @@ By Gauß's theorem, supposing that contributions at spatial infinity vanish,
 If we define $Σ_f \coloneqq Σ^+$ and $Σ_p$ to be $Σ^-$ but future-pointing instead of past-pointing, i.e., $\int_{Σ_p}\dd Σ_μ J^μ = -\int_{Σ_-}\dd Σ_μ J^μ$, then the equation above becomes
 \begin{align}
 	\int_{Σ_p}\dd Σ_μ J^μ = \int_{Σ_f}\dd Σ_μ J^μ = \int_{t\ \const}\dd^3 x\,J^0
+,\end{align}
+and so the integral is the same on any (future-pointing) space-like surface: it is a \emph{conserved charge}.
+With $Σ$ a space-like surface,
+\begin{align}
+	Q &= \int_Σ\dd Σ_μ J^μ
+,&	\dv{Q}{t} &= 0
+.\end{align}
+
+\subsection{Current 4-vector}
+
+The components of the current 4-vector
+\begin{align}
+	J^μ = (ρc, \uvec{J}) = ρ(c, \uvec{v}) = γρ_0(c, \uvec{v}) = ρ_0u^μ
 \end{align}
+are
+\begin{align}
+	ρ_0 &= \text{charge density in rest frame of current}
+,\\	ρ &= γρ_0 = \text{charge density in arbitrary frame}
+,\\	\uvec{J} &= ρ\uvec{v} = \text{charge flux density}
+.\end{align}
+
+
+\section{The Energy--Momentum (or Stress--Energy) Tensor}
+
+Suppose we have a matter distribution (a fluid or field, etc.).
+Just as there is a conserved current $J^μ$ for electromagnetism, there is a conserved `current' $T^{μν}$ for energy--momentum, whose conservation

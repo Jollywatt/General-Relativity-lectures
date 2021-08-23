@@ -26,3 +26,24 @@
 
 % 'constant' text for math
 \newcommand{\const}{\text{const.}}
+
+% Astronomical symbols like ☉, ☽...
+% Symbols are taken from `mathabx' package/font.
+% See `https://tex.stackexchange.com/a/570701/105570'
+\newcommand*{\mathabxbfamily}{\fontencoding{U}\fontfamily{mathb}\selectfont}
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * mathb
+      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+      }{}
+\newcommand*{\Sun}{{\text{\mathabxbfamily\char"40}}}
+\newcommand*{\Mercury}{{\text{\mathabxbfamily\char"41}}}
+\newcommand*{\Venus}{{\text{\mathabxbfamily\char"42}}}
+\newcommand*{\Earth}{{\text{\mathabxbfamily\char"43}}}
+\newcommand*{\Mars}{{\text{\mathabxbfamily\char"44}}}
+\newcommand*{\Jupiter}{{\text{\mathabxbfamily\char"45}}}
+\newcommand*{\Saturn}{{\text{\mathabxbfamily\char"46}}}
+\newcommand*{\Uranus}{{\text{\mathabxbfamily\char"47}}}
+\newcommand*{\Neptune}{{\text{\mathabxbfamily\char"48}}}
+\newcommand*{\Pluto}{{\text{\mathabxbfamily\char"49}}}
+\newcommand*{\Moon}[1]{{\text{\mathabxbfamily\char"4C}}}
